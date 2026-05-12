@@ -1,0 +1,855 @@
+/* =========================
+   FIT LEVEL TOKENS
+========================= */
+
+:root {
+
+  /* HIGH FIT */
+  --fit-high: #05a63a;
+  --fit-high-light: #e9fff0;
+  --fit-high-border: #b7efc8;
+
+  /* MODERATE FIT */
+  --fit-moderate: #c58a00;
+  --fit-moderate-light: #fff8e1;
+  --fit-moderate-border: #f3d77a;
+
+  /* LOW FIT */
+  --fit-low: #8b1e2d;
+  --fit-low-light: #fff1f3;
+  --fit-low-border: #e7a8b2;
+
+}
+
+.fit-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+
+  padding: 10px 18px;
+
+  border-radius: 999px;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  color: white;
+}
+
+/* HIGH FIT */
+.fit-badge.high {
+  background: #0BAA3B;
+}
+
+/* MODERATE FIT */
+.fit-badge.moderate {
+  background: #D89B00;
+}
+
+/* LOW FIT */
+.fit-badge.low {
+  background: #A11A2F;
+}
+
+/* =========================
+   RESULTS HEADER
+========================= */
+.results-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.results-header h1 {
+  font-size: 44px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.results-header p {
+  font-size: 18px;
+  color: #64748b;
+}
+
+
+/* =========================
+   PERSONALITY CARD (HERO)
+========================= */
+.personality-card {
+  background: linear-gradient(135deg, #5b3df5, #7c3aed);
+  color: white;
+  padding: 40px;
+  border-radius: 24px;
+  margin-bottom: 40px;
+}
+
+.personality-card h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.personality-summary {
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.95;
+  margin-bottom: 24px;
+}
+
+/* Description */
+.personality-card p {
+  font-size: 19px;
+  line-height: 1.8;
+  opacity: 0.95;
+  max-width: 900px;
+}
+
+.personality-insights {
+  background: white;
+  color: #1f2937; /* dark text */
+  padding: 24px 28px;
+  border-radius: 16px;
+  margin-top: 16px;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.personality-insights p {
+  margin: 0;
+  padding: 14px 16px;
+  font-size: 15px;
+  color: #374151;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
+.personality-insights p:not(:last-child) {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.personality-insights p:first-of-type {
+  margin-top: 8px;
+}
+
+.insights-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+.personality-insights p:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  transition: all 0.2s ease;
+}
+
+/* =========================
+   TOP CARD BASE
+========================= */
+
+.top-card {
+  background: white;
+  border-radius: 32px;
+  padding: 48px;
+  margin: 64px 0;
+
+  border: 2px solid;
+  transition: all 0.25s ease;
+
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.04);
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* HIGH FIT */
+.top-card.high {
+  border-color: var(--fit-high-border);
+}
+
+/* MODERATE FIT */
+.top-card.moderate {
+  border-color: var(--fit-moderate-border);
+}
+
+/* LOW FIT */
+.top-card.low {
+  border-color: var(--fit-low-border);
+}
+
+/* Meta row (badge + score) */
+.top-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.top-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+
+  padding: 10px 18px;
+  border-radius: 999px;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  color: white;
+}
+
+/* HIGH */
+.top-card.high .top-badge {
+  background: var(--fit-high);
+}
+
+/* MODERATE */
+.top-card.moderate .top-badge {
+  background: var(--fit-moderate);
+}
+
+/* LOW */
+.top-card.low .top-badge {
+  background: var(--fit-low);
+}
+
+/* Score (BIG + CONFIDENT) */
+.score {
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.top-card.high .score {
+  color: var(--fit-high);
+}
+
+.top-card.moderate .score {
+  color: var(--fit-moderate);
+}
+
+.top-card.low .score {
+  color: var(--fit-low);
+}
+
+/* Title (dominant) */
+.top-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+/* Fit label */
+.top-fit {
+  font-size: 16px;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 16px;
+}
+
+/* Description */
+.top-desc {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #475569;
+  max-width: 720px;
+  margin-bottom: 28px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  width: 100%;
+
+  margin-bottom: 18px;
+}
+
+.card-badge-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.score {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+  color: #0F172A;
+}
+
+/* =========================
+  TOP RECOMMENDATION HERO
+========================= */
+.top-card {
+  padding: 42px;
+
+  border-radius: 36px;
+
+  background: white;
+
+  border: 2px solid #C7F0D3;
+
+  box-shadow:
+    0 12px 40px rgba(15, 23, 42, 0.06);
+
+  margin-bottom: 64px;
+}
+
+/* META */
+.top-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  margin-bottom: 32px;
+}
+
+.top-left-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.top-badge {
+  background: #08B63E;
+
+  color: white;
+
+  padding: 12px 22px;
+
+  border-radius: 999px;
+
+  font-size: 16px;
+  font-weight: 800;
+
+  letter-spacing: 0.04em;
+}
+
+.top-score {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* TITLE */
+
+.top-title {
+  font-size: 28px;
+  line-height: 1.05;
+  font-weight: 800;
+
+  color: #0F172A;
+
+  margin-bottom: 42px;
+}
+
+/* GRID */
+
+.top-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+
+  margin-bottom: 36px;
+}
+
+/* INFO CARDS */
+
+.info-card {
+  border-radius: 18px;
+
+  padding: 32px;
+
+  min-height: 320px;
+}
+
+/* ABOUT CARD */
+
+.about-card {
+  background: #F3F7FF;
+
+  border: 2px solid #BFD7FF;
+}
+
+/* FIT CARD */
+
+.fit-card.high {
+  background: #F2FFF5;
+  border: 2px solid #A8E5B8;
+}
+
+.fit-card.moderate {
+  background: #FFF8E8;
+  border: 2px solid #F0D27A;
+}
+
+.fit-card.low {
+  background: #FFF1F3;
+  border: 2px solid #E7A5AF;
+}
+
+/* HEADINGS */
+
+.info-card h3 {
+  font-size: 24px;
+  font-weight: 800;
+
+  margin-bottom: 28px;
+
+  color: #0F172A;
+}
+
+.info-section {
+  margin-bottom: 24px;
+}
+
+.info-section h4 {
+  font-size: 14px;
+  font-weight: 700;
+
+  margin-bottom: 10px;
+
+  color: #1E3A8A;
+}
+
+.info-section p,
+.fit-card p {
+  font-size: 14px;
+  line-height: 1.7;
+
+  color: #334155;
+}
+
+/* HERO BUTTON */
+
+.hero-btn {
+  width: 100%;
+
+  height: 88px;
+
+  border-radius: 24px;
+
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* TOP SCORE COLORS */
+
+.top-score.high {
+  color: #08B63E;
+}
+
+.top-score.moderate {
+  color: #D89B00;
+}
+
+.top-score.low {
+  color: #A11A2F;
+}
+
+/* =========================
+   APPLY BUTTON (PRIMARY)
+========================= */
+.apply-btn {
+  width: 100%;
+
+  border: none;
+  border-radius: 18px;
+
+  padding: 18px 24px;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  color: white;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.apply-btn.high {
+  background: var(--fit-high);
+}
+
+.apply-btn.moderate {
+  background: var(--fit-moderate);
+}
+
+.apply-btn.low {
+  background: var(--fit-low);
+}
+
+
+/* =========================
+   SECTION (MATCH GROUPS)
+========================= */
+.section {
+  margin-bottom: 56px;
+}
+
+.section h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #0f172a;
+}
+
+
+/* =========================
+   GRID (MATCH CARDS)
+========================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+
+/* =========================
+   PROGRAM CARDS
+========================= */
+.program-card {
+  background: white;
+  padding: 28px;
+  border-radius: 18px;
+  border: 1.5px solid #d1fae5;
+  transition: all 0.2s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.program-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+
+.program-card p {
+  font-size: 14px;
+  color: #475569;
+  margin-bottom: 20px;
+}
+
+
+/* =========================
+   RESPONSIVE (IMPORTANT)
+========================= */
+@media (max-width: 768px) {
+  .personality-card {
+    padding: 40px 28px;
+  }
+
+  .personality-card h2 {
+    font-size: 28px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .top-card {
+    padding: 32px;
+  }
+}
+
+/* =========================
+   HERO (MAIN CARD)
+========================= */
+.results-hero {
+  background: linear-gradient(135deg, #3b82f6, #7c3aed);
+  border-radius: 32px;
+  padding: 64px;
+  color: white;
+  margin-bottom: 56px;
+}
+
+/* Title */
+.results-hero h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Summary */
+.hero-summary {
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 900px;
+  margin-bottom: 32px;
+  opacity: 0.95;
+}
+
+
+/* =========================
+   INSIGHTS CARD (INNER BLOCK)
+========================= */
+.insights-card {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 28px 32px;
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Title */
+.insights-card h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* List */
+.insights-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Each item */
+.insights-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* Check icon */
+.check {
+  font-weight: bold;
+  opacity: 0.9;
+}
+
+.program-card.active {
+  border-width: 3px;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   TABLET RESPONSIVENESS
+========================= */
+@media (max-width: 768px) {
+
+  .results-page {
+    padding: 24px 16px;
+  }
+
+  .results-container {
+    gap: 24px;
+    width: 100%;
+  }
+
+  .results-header h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .results-header p {
+    font-size: 1rem;
+  }
+
+  .personality-card {
+    padding: 32px 24px;
+  }
+
+  .personality-card h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .personality-summary {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  /* STACK TOP GRID */
+  .top-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .top-card {
+    padding: 28px 24px;
+  }
+
+  .top-title {
+    font-size: 2rem;
+    line-height: 1.2;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .top-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .top-score {
+    align-self: flex-start;
+  }
+
+  /* STACK PROGRAM CARDS */
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .other-list {
+    grid-template-columns: 1fr;
+  }
+
+  .program-card {
+    padding: 24px;
+  }
+
+  .info-card {
+    padding: 24px;
+  }
+
+  .apply-btn,
+  .hero-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .other-matches-toggle {
+    padding: 20px;
+  }
+}
+
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+@media (max-width: 480px) {
+
+  .results-page {
+    padding: 20px 12px;
+  }
+
+  .results-container {
+    gap: 20px;
+  }
+
+  .results-header h1 {
+    font-size: 1.7rem;
+  }
+
+  .results-header p {
+    font-size: 0.95rem;
+  }
+
+  .personality-card {
+    padding: 20px 16px;
+    border-radius: 24px;
+  }
+
+  .personality-card h2 {
+    font-size: 1.7rem;
+  }
+
+  .personality-summary {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .personality-insights {
+    padding: 18px;
+  }
+
+  .personality-insights p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding: 12px 14px;
+    font-size: 0.9rem;
+  }
+
+  .top-card {
+    padding: 22px 18px;
+    border-radius: 24px;
+  }
+
+  .top-title {
+    font-size: 1.7rem;
+  }
+
+  .top-badge,
+  .fit-badge {
+    font-size: 0.75rem;
+  }
+
+  .top-score {
+    font-size: 1rem;
+  }
+
+  .info-card {
+    padding: 18px 16px;
+  }
+
+  .info-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .info-section p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .program-card {
+    padding: 20px 18px;
+    border-radius: 22px;
+  }
+
+  .program-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .program-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .apply-btn,
+  .hero-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 0.95rem;
+  }
+
+  .other-matches-toggle {
+    padding: 18px;
+  }
+
+  .other-matches-toggle h2 {
+    font-size: 1.2rem;
+  }
+
+  .arrow svg {
+    width: 24px;
+    height: 24px;
+  }
+}

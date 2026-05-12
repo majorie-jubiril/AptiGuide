@@ -1,0 +1,61 @@
+:root {
+  --color-primary: #1E3A8A;
+  --color-success: #16A34A;
+  --color-warning: #F59E0B;
+  --color-danger: #DC2626;
+
+  --color-bg: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-border: #E5E7EB;
+
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94A3B8;
+
+  --font-family: "Inter", sans-serif;
+
+  --text-xl: 32px;
+  --text-lg: 24px;
+  --text-md: 18px;
+  --text-sm: 14px;
+
+  --font-bold: 600;
+  --font-medium: 500;
+  --font-regular: 400;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  --shadow-card: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* === FIT CONTAINERS === */
+
+.fit-high {
+  background-color: var(--fit-high-bg);
+  border: 1px solid var(--fit-high-border);
+  color: var(--fit-high);
+}
+
+.fit-moderate {
+  background-color: var(--fit-moderate-bg);
+  border: 1px solid var(--fit-moderate-border);
+  color: var(--fit-moderate);
+}
+
+.fit-low {
+  background-color: var(--fit-low-bg);
+  border: 1px solid var(--fit-low-border);
+  color: var(--fit-low);
+}
