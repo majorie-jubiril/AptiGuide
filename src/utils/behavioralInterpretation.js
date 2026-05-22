@@ -14,7 +14,7 @@ export function interpretBehavior(
   }
 
   const programProfile =
-    PROGRAM_PROFILES[selectedProgram.program];
+  PROGRAM_PROFILES[selectedProgram.program];
 
   const personalityProfile =
     PERSONALITY_PROFILES[personalityType];
@@ -378,9 +378,6 @@ export function composeBehaviorNarrative(
 const semanticLanguage =
   language.environment_semantics;
 
-const transitions =
-  language.narrative_transitions;
-
   const programName =
     selectedProgram.program || "This program";
 
@@ -400,10 +397,6 @@ const transitions =
     structured_strategist:
       "structured and analytical personality",
   };
-
-  const personalityLabel =
-    personalityLabels[personalityType] ||
-    "individual learning style";
 
   let modifier = "";
 
