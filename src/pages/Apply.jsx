@@ -1,5 +1,13 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import {
+  getPersonalitySummary
+} from "../utils/insights";
+
+import {
+  generateApplicationContext,
+  generateStatementGuidance
+} from "../utils/applicationInsights";
 import "../styles/apply.css";
 
 export default function Apply() {
@@ -11,6 +19,22 @@ export default function Apply() {
     JSON.parse(localStorage.getItem("selectedProgram"));
 
   const [step, setStep] = useState(1);
+  const scores = location.state?.scores;
+
+  const personality = scores
+    ? getPersonalitySummary(scores)
+    : null;
+
+  const applicationContext =
+    generateApplicationContext(
+    selectedProgram,
+    personality
+  );
+  
+  const statementGuidance =
+  generateStatementGuidance(
+    selectedProgram
+  );
 
   // ✅ FULL FORM STATE (FIXED)
   const [formData, setFormData] = useState(() => {
@@ -46,56 +70,107 @@ export default function Apply() {
 
   return (
     <div className="apply-page">
-      <div className="apply-card">
+      <div className="apply-stepper-wrap">
 
         {/* =========================
-            STEPPER (FIXED KEYS)
+            STEPPER
         ========================= */}
         <div className="stepper">
-          {[1, 2, 3, 4, 5].map((s) => (
-            <div key={s} className="step-wrapper">
-              <div
-                className={`step ${
-                  step === s ? "active" : ""
-                } ${step > s ? "done" : ""}`}
-              >
-                {step > s ? "✓" : s}
-              </div>
 
-              {s < 5 && <div className="line"></div>}
-            </div>
-          ))}
+          {[
+            "Confirm",
+            "Details",
+            "Academic",
+            "Statement",
+            "Review"
+          ].map((label, index) => {
+
+            const s = index + 1;
+
+            return (
+              <div
+                key={s}
+                className="step-item"
+              >
+
+                <div className="step-line-bg"></div>
+
+                <div
+                  className={`step-circle ${
+                    step === s
+                      ? "active"
+                      : step > s
+                      ? "done"
+                      : ""
+                  }`}
+                >
+                  {step > s ? "✓" : s}
+                </div>
+
+                <span className="step-label">
+                  {label}
+                </span>
+
+              </div>
+            );
+          })}
+
         </div>
+    </div>
+
+    <div className="apply-card">
 
         {/* =========================
             STEP 1: CONFIRM
         ========================= */}
         {step === 1 && (
-          <>
-            <h1 className="apply-title">
-              Application: {selectedProgram.program}
-            </h1>
+          <div className="apply-inner">
+            <div className="application-hero">
 
-            <div className="fit-row">
-              <div className="fit-right">
-                <span
-                  className={`fit-badge ${selectedProgram.level.toLowerCase()}`}
-                >
-                  {selectedProgram.level} Fit
+              <div className="hero-left">
+
+                <span className="hero-label">
+                  APPLYING TO
                 </span>
-                <span className="match-score">
-                  {selectedProgram.percentage}% Match
-                </span>
+
+                <h1 className="hero-program">
+                  {selectedProgram.program}
+                </h1>
+
+                <div className="hero-fit-row">
+
+                  <span
+                    className={`fit-badge ${selectedProgram.level.toLowerCase()}`}
+                  >
+                    {selectedProgram.level} Fit
+                  </span>
+
+                  <span className="match-score">
+                    {selectedProgram.percentage}% Match
+                  </span>
+
+                </div>
+
               </div>
+
             </div>
 
             <div
               className={`insight-box ${selectedProgram.level.toLowerCase()}`}
             >
-              Based on your personality, this program is a{" "}
-              <strong>
-                {selectedProgram.level.toLowerCase()} match
-              </strong>.
+
+              <div className="insight-content">
+
+                <h3>
+                  {applicationContext.title}
+                </h3>
+
+                <p>
+                  {applicationContext.conciseCompatibility}
+                </p>
+
+              </div>
+
             </div>
 
             <button
@@ -111,14 +186,15 @@ export default function Apply() {
             >
               ← Change Program
             </button>
-          </>
+          </div>
         )}
 
         {/* =========================
             STEP 2: DETAILS
         ========================= */}
         {step === 2 && (
-          <>
+          <div className="form-layout">
+
             <h1 className="apply-title">Personal Details</h1>
             <p className="form-sub">
               Please provide your contact information
@@ -184,21 +260,27 @@ export default function Apply() {
                 Next →
               </button>
             </div>
-          </>
+          </div>
         )}
 
         {/* =========================
             STEP 3: ACADEMIC
         ========================= */}
         {step === 3 && (
-          <>
+          <div className="form-layout">
+
             <h1 className="apply-title">Academic Background</h1>
             <p className="form-sub">
               Tell us about your educational history
             </p>
 
-            <div className="info-box">
-              <strong>Note:</strong> This is a simulation
+            <div className="info-alert">
+              <span className="info-icon">ⓘ</span>
+
+              <p>
+                This is a simulation for demonstration purposes.
+                No real application is submitted.
+              </p>
             </div>
 
             <div className="form-group">
@@ -253,148 +335,348 @@ export default function Apply() {
                 Next →
               </button>
             </div>
-          </>
+          </div>
         )}
 
         {/* =========================
-            STEP 4: STATEMENT
-        ========================= */}
-        {step === 4 && (
-          <>
-            <h1 className="apply-title">Personal Statement</h1>
+              STEP 4: STATEMENT
+          ========================= */}
+          {step === 4 && (
+            <div className="form-layout statement-layout">
 
-            <div className="info-box purple">
-              💡 Suggestion: Highlight analytical thinking & problem-solving.
+              <div className="statement-header">
+                <h1 className="apply-title">
+                  Personal Statement
+                </h1>
+
+                <p className="form-sub">
+                  Why are you interested in {selectedProgram.program}?
+                </p>
+              </div>
+
+              <div className="statement-guidance">
+
+                <div className="guidance-icon">
+                  💡
+                </div>
+
+                <div className="guidance-content">
+
+                  <p className="guidance-title">
+                    Suggestions for your statement:
+                  </p>
+
+                  <p className="guidance-text">
+                    Your statement should clearly explain why you are interested
+                    in this field, the experiences that shaped your interest,
+                    and the goals you hope to pursue through this program.
+                  </p>
+
+                </div>
+
+              </div>
+
+              <div className="statement-focus-card">
+
+                <h4 className="focus-title">
+                  AREAS TO ADDRESS IN YOUR STATEMENT:
+                </h4>
+
+                <div className="statement-tags">
+
+                  {statementGuidance.themes.map(
+                    (theme) => (
+                      <span
+                        key={theme}
+                        className="statement-tag"
+                      >
+                        {theme}
+                      </span>
+                    )
+                  )}
+
+                </div>
+
+              </div>
+
+              <div className="form-group">
+
+                <label className="statement-label">
+                  Your Statement <span>*</span>
+                </label>
+
+                <textarea
+                  className="statement-textarea"
+                  rows="10"
+                  placeholder="Describe your motivation, interests, experiences, and future goals related to this program..."
+                  value={formData.statement}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      statement: e.target.value,
+                    })
+                  }
+                />
+
+                <div className="statement-meta-row">
+
+                  <p className="statement-helper">
+                    Aim for 200–500 words
+                  </p>
+
+                  <span className="word-count">
+                    {
+                      formData.statement
+                        .trim()
+                        .split(/\s+/)
+                        .filter(Boolean).length
+                    }{" "}
+                    words
+                  </span>
+
+                </div>
+
+              </div>
+
+              <div className="form-actions">
+
+                <button
+                  className="back-btn"
+                  onClick={() => setStep(3)}
+                >
+                  ← Back
+                </button>
+
+                <button
+                  className="next-btn"
+                  onClick={() => setStep(5)}
+                >
+                  Review Application →
+                </button>
+
+              </div>
+
             </div>
+          )}
 
-            <div className="form-group">
-              <label>Your Statement *</label>
-              <textarea
-                className="statement-textarea"
-                rows="6"
-                placeholder="Write your motivation..."
-                value={formData.statement}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    statement: e.target.value,
-                  })
-                }
-              />
-            </div>
-
-            <div className="form-actions">
-              <button className="back-btn" onClick={() => setStep(3)}>
-                ← Back
-              </button>
-
-              <button className="next-btn" onClick={() => setStep(5)}>
-                Next →
-              </button>
-            </div>
-          </>
-        )}
-
-        {/* =========================
+       {/* =========================
             STEP 5: REVIEW
         ========================= */}
         {step === 5 && (
-          <>
-            <h1 className="apply-title">Review & Submit</h1>
+          <div className="review-layout">
 
-            <div className="review-card highlight">
-              <div className="review-header">
-                <h3>{selectedProgram.program}</h3>
-                <span className={`fit-badge ${selectedProgram.level.toLowerCase()}`}>
+            <h1 className="apply-title review-main-title">
+              Review & Submit
+            </h1>
+
+            {/* =========================
+                PROGRAM SUMMARY
+            ========================= */}
+            <div className="program-summary-card">
+
+              <div className="program-summary-left">
+
+                <h2 className="summary-program">
+                  {selectedProgram.program}
+                </h2>
+
+                <p className="review-program-description">
+                  Ensure your personal details, academic information, and statement are accurate before submission.
+                </p>
+
+              </div>
+
+              <div className="program-summary-right">
+
+                <span
+                  className={`fit-badge review-fit ${selectedProgram.level.toLowerCase()}`}
+                >
                   {selectedProgram.level} Fit
                 </span>
+
+                <span className="review-match">
+                  {selectedProgram.percentage}% Match
+                </span>
+
               </div>
+
             </div>
 
-            <div className="review-card">
-              <h4>Personal Details</h4>
-              <p>{formData.name}</p>
-              <p>{formData.email}</p>
-              <p>{formData.phone}</p>
-              <p>{formData.country}</p>
+            {/* =========================
+                PERSONAL DETAILS
+            ========================= */}
+            <div className="review-section-card">
+
+              <h4 className="review-section-title">
+                PERSONAL DETAILS
+              </h4>
+
+              <div className="review-grid">
+
+                <div className="review-row">
+                  <span>Name</span>
+                  <strong>{formData.name || "—"}</strong>
+                </div>
+
+                <div className="review-row">
+                  <span>Email</span>
+                  <strong>{formData.email || "—"}</strong>
+                </div>
+
+                <div className="review-row">
+                  <span>Phone</span>
+                  <strong>{formData.phone || "—"}</strong>
+                </div>
+
+                <div className="review-row">
+                  <span>Country</span>
+                  <strong>{formData.country || "—"}</strong>
+                </div>
+
+              </div>
+
             </div>
 
-            <div className="review-card">
-              <h4>Academic Background</h4>
-              <p>{formData.school}</p>
-              <p>{formData.qualification}</p>
-              <p>{formData.grades}</p>
+            {/* =========================
+                ACADEMIC BACKGROUND
+            ========================= */}
+            <div className="review-section-card">
+
+              <h4 className="review-section-title">
+                ACADEMIC BACKGROUND
+              </h4>
+
+              <div className="review-grid">
+
+                <div className="review-row">
+                  <span>School</span>
+                  <strong>{formData.school || "—"}</strong>
+                </div>
+
+                <div className="review-row">
+                  <span>Qualification</span>
+                  <strong>{formData.qualification || "—"}</strong>
+                </div>
+
+                <div className="review-row">
+                  <span>Grades</span>
+                  <strong>{formData.grades || "—"}</strong>
+                </div>
+
+                <div className="review-row">
+                  <span>Statement</span>
+                  <strong>
+                    {formData.statement
+                      ? `${formData.statement.substring(0, 60)}...`
+                      : "—"}
+                  </strong>
+                </div>
+
+              </div>
+
             </div>
 
-            <div className="review-card">
-              <h4>Statement</h4>
-              <p>{formData.statement}</p>
-            </div>
+            {/* =========================
+                ACTIONS
+            ========================= */}
+            <div className="form-actions review-actions">
 
-            <div className="form-actions">
-              <button className="back-btn" onClick={() => setStep(4)}>
+              <button
+                className="back-btn review-back-btn"
+                onClick={() => setStep(4)}
+              >
                 ← Back
               </button>
 
               <button
-                className="submit-btn"
+                className="submit-btn review-submit-btn"
                 onClick={() => {
                   localStorage.removeItem("applicationData");
                   setStep(6);
                 }}
               >
-                Submit Application ✓
+                ✓ Submit Application
               </button>
+
             </div>
-          </>
+
+          </div>
         )}
 
         {/* =========================
             STEP 6: SUBMIT APPLICATION
         ============================ */}
         {step === 6 && (
-        <>
-          <h1 className="apply-title">Application Submitted!</h1>
+        <div className="success-layout">
+      <div className="success-hero">
 
-          <div className="review-card highlight center">
-            <h2>{selectedProgram.program}</h2>
+        <div className="success-icon-wrap">
+          ✓
+        </div>
 
-            <div className="status-row">
-              <span className="status-badge pending">PENDING REVIEW</span>
-              <span
-                className={`fit-badge ${selectedProgram.level.toLowerCase()}`}
-              >
-                {selectedProgram.level} Fit
-              </span>
-            </div>
+        <h1 className="success-title">
+          Application Submitted!
+        </h1>
 
-            <p className="success-message">
-              This program aligns well with your strengths in
-              <strong> analytical thinking, systematic problem-solving, </strong>
-              and <strong>independent learning</strong>.
-            </p>
+      </div>
+
+      {/* =========================
+          SUCCESS BODY
+      ========================= */}
+      <div className="success-body">
+
+        <div className="success-summary-card">
+
+          {/* TOP ROW */}
+          <div className="success-summary-top">
+
+            <h2 className="success-program">
+              {selectedProgram.program}
+            </h2>
+
+            <span className="pending-badge">
+              Pending Review
+            </span>
+
           </div>
 
-          <p className="success-subtext">
-            We'll review your application and send a decision to{" "}
-            <strong>{formData.email}</strong> within 4–6 weeks.
-          </p>
+          {/* FIT ROW */}
+          <div className="success-fit-row">
 
-          <button
-            className="continue-btn"
-            onClick={() => navigate("/results")}
-          >
-            Explore Other Programs
-          </button>
+            <span
+              className={`fit-badge review-fit ${selectedProgram.level.toLowerCase()}`}
+            >
+              {selectedProgram.level} Fit
+            </span>
 
-          <button
-            className="secondary-btn"
-            onClick={() => navigate("/")}
-          >
-            Return to Home
-          </button>
-        </>
-      )}
+            <span className="success-match">
+              {selectedProgram.percentage}% Match
+            </span>
+
+          </div>
+          
+        </div>
+
+        {/* PRIMARY CTA */}
+        <button
+          className="success-primary-btn"
+          onClick={() => navigate("/results")}
+        >
+          Explore Other Programs
+        </button>
+
+        {/* SECONDARY CTA */}
+        <button
+          className="success-secondary-btn"
+          onClick={() => navigate("/")}
+        >
+          Return to Home
+        </button>
+
+      </div>
+
+    </div>
+    )}
       </div>
     </div>
   );

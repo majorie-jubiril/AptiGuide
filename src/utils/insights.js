@@ -1,6 +1,5 @@
-/**
- * Convert normalized score → level
- */
+import { PROGRAM_PROFILES } from "../data/programProfiles";
+
 function getLevel(score = 50) {
   if (score >= 70) return "high";
   if (score >= 40) return "moderate";
@@ -137,23 +136,37 @@ export function generateInsights(scores) {
   return insights;
 }
 
-/**
- * ✅ PROGRAM EXPLANATION (UNCHANGED BUT ALIGNED)
- */
-export function generateProgramExplanation(fit, personality, level) {
-  if (!fit || !personality) {
+export function generateProgramExplanation(
+  fit,
+  personality,
+  level
+) {
+  if (!fit?.program || !personality?.type) {
     return "Program aligned with your personality profile.";
   }
 
-  const personalityLabel = personality?.label || "your";
+  const profile = PROGRAM_PROFILES[fit.program];
 
-  if (level === "High") {
-    return `This program strongly aligns with your ${personalityLabel} personality and preferred work style.`;
+  if (!profile?.fitExplanations) {
+    return "Program aligned with your personality profile.";
   }
 
-  if (level === "Moderate") {
-    return `This program partially matches your ${personalityLabel} personality, though some aspects may require adjustment.`;
+  const levelExplanations =
+    profile.fitExplanations[level];
+
+  if (!levelExplanations) {
+    return "Program aligned with your personality profile.";
   }
 
-  return `This program may challenge your natural preferences, but could still be pursued with effort.`;
+  // ✅ OLD ARCHITECTURE SUPPORT
+  if (typeof levelExplanations === "string") {
+    return levelExplanations;
+  }
+
+  // ✅ NEW ARCHITECTURE SUPPORT
+  return (
+    levelExplanations[personality.type] ||
+    Object.values(levelExplanations)[0] ||
+    "Program aligned with your personality profile."
+  );
 }

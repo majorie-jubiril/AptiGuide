@@ -42,6 +42,17 @@ export const PERSONALITY_PROFILES = {
       "Can become too detail-focused",
       "May struggle with ambiguity"
     ],
+    
+    behavioralTraits: {
+      structurePreference: "high",
+      collaborationPreference: "low",
+      ambiguityTolerance: "low",
+      creativityOrientation: "moderate",
+      emotionalOrientation: "low",
+      adaptabilityPreference: "moderate",
+      leadershipPreference: "moderate",
+      technicalOrientation: "high"
+    },
 
     recommendedPrograms: [
       "Computer Science",
@@ -95,6 +106,17 @@ export const PERSONALITY_PROFILES = {
       "May resist rigid structure"
     ],
 
+    behavioralTraits: {
+      structurePreference: "low",
+      collaborationPreference: "moderate",
+      ambiguityTolerance: "high",
+      creativityOrientation: "high",
+      emotionalOrientation: "moderate",
+      adaptabilityPreference: "high",
+      leadershipPreference: "low",
+      technicalOrientation: "moderate"
+    },
+
     recommendedPrograms: [
       "Design",
       "Media",
@@ -146,6 +168,17 @@ export const PERSONALITY_PROFILES = {
       "Can struggle with unpredictability",
       "May prioritize outcomes over flexibility"
     ],
+
+    behavioralTraits: {
+      structurePreference: "high",
+      collaborationPreference: "moderate",
+      ambiguityTolerance: "low",
+      creativityOrientation: "moderate",
+      emotionalOrientation: "moderate",
+      adaptabilityPreference: "moderate",
+      leadershipPreference: "high",
+      technicalOrientation: "moderate"
+    },
 
     recommendedPrograms: [
       "Business Administration",
@@ -199,6 +232,17 @@ export const PERSONALITY_PROFILES = {
       "May struggle with rigid systems"
     ],
 
+    behavioralTraits: {
+      structurePreference: "moderate",
+      collaborationPreference: "high",
+      ambiguityTolerance: "moderate",
+      creativityOrientation: "moderate",
+      emotionalOrientation: "high",
+      adaptabilityPreference: "high",
+      leadershipPreference: "moderate",
+      technicalOrientation: "low"
+    },
+
     recommendedPrograms: [
       "Psychology",
       "Human Resources",
@@ -251,6 +295,17 @@ export const PERSONALITY_PROFILES = {
       "May avoid experimentation"
     ],
 
+    behavioralTraits: {
+      structurePreference: "high",
+      collaborationPreference: "moderate",
+      ambiguityTolerance: "low",
+      creativityOrientation: "low",
+      emotionalOrientation: "moderate",
+      adaptabilityPreference: "low",
+      leadershipPreference: "low",
+      technicalOrientation: "moderate"
+    },
+
     recommendedPrograms: [
       "Agriculture",
       "Construction",
@@ -302,6 +357,17 @@ export const PERSONALITY_PROFILES = {
       "Can become overly self-reliant",
       "May struggle with constant collaboration"
     ],
+
+    behavioralTraits: {
+      structurePreference: "moderate",
+      collaborationPreference: "low",
+      ambiguityTolerance: "high",
+      creativityOrientation: "moderate",
+      emotionalOrientation: "low",
+      adaptabilityPreference: "high",
+      leadershipPreference: "low",
+      technicalOrientation: "high"
+    },
 
     recommendedPrograms: [
       "Cybersecurity",

@@ -38,9 +38,45 @@
   --radius-lg: 16px;
 
   --shadow-card: 0 4px 20px rgba(0,0,0,0.05);
+
+/* === FIT COLORS (FIGMA ALIGNED) === */
+
+/* HIGH FIT */
+--fit-high: #10B981;
+--fit-high-bg: #ECFDF5;
+--fit-high-border: #A7F3D0;
+
+/* MODERATE FIT */
+--fit-moderate: #F59E0B;
+--fit-moderate-bg: #FFFBEB;
+--fit-moderate-border: #FDE68A;
+
+/* LOW FIT */
+--fit-low: #F43F5E;
+--fit-low-bg: #FFF1F2;
+--fit-low-border: #FDA4AF;
 }
 
-/* === FIT CONTAINERS === */
+/* =========================
+   FIT BADGES
+========================= */
+
+.fit-badge {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 5px 12px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
 
 .fit-high {
   background-color: var(--fit-high-bg);
@@ -59,3 +95,5 @@
   border: 1px solid var(--fit-low-border);
   color: var(--fit-low);
 }
+
+
