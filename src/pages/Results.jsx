@@ -15,7 +15,6 @@ import "../styles/results.css";
 
 import { PERSONALITY_PROFILES } from "../data/personalityProfiles";
 import { PROGRAM_PROFILES } from "../data/programProfiles";
-import { evaluateBehavioralCompatibility } from "../utils/behavioralCompatibility";
 
 function getArticle(word = "") {
   return /^[aeiou]/i.test(word)
@@ -141,17 +140,6 @@ export default function Results() {
     PERSONALITY_PROFILES[
       personalityType
     ];
-
-  const behavioralCompatibility =
-  topProgram
-    ? evaluateBehavioralCompatibility({
-        personalityProfile: profile,
-        programProfile:
-          PROGRAM_PROFILES[
-            topProgram.program
-          ]
-      })
-    : null;
 
   useEffect(() => {
     if (topProgram) {

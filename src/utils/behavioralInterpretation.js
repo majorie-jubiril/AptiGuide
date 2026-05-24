@@ -14,7 +14,7 @@ export function interpretBehavior(
   }
 
   const programProfile =
-  PROGRAM_PROFILES[selectedProgram.program];
+    PROGRAM_PROFILES[selectedProgram.program];
 
   const personalityProfile =
     PERSONALITY_PROFILES[personalityType];
@@ -368,7 +368,6 @@ export function composeBehaviorNarrative(
 };
 
   const {
-  alignments,
   tensions,
   adaptationPotential,
   fitTone,
@@ -378,25 +377,8 @@ export function composeBehaviorNarrative(
 const semanticLanguage =
   language.environment_semantics;
 
-  const programName =
-    selectedProgram.program || "This program";
-
-  const programProfile =
-    PROGRAM_PROFILES[programName];
-
-  const personalityLabels = {
-    analytical_thinker:
-      "independent problem-solving personality",
-
-    creative_explorer:
-      "creative and exploratory personality",
-
-    versatile_collaborator:
-      "adaptable and people-oriented personality",
-
-    structured_strategist:
-      "structured and analytical personality",
-  };
+const transitions =
+  language.narrative_transitions;
 
   let modifier = "";
 
@@ -430,34 +412,20 @@ if (
 
   let layeredNarrative = [];
 
+  const reinforcementTransition =
+  transitions?.reinforcement?.[0] || "";
+
+const cautionTransition =
+  transitions?.caution?.[0] || "";
+
+const adaptationTransition =
+  transitions?.adaptation?.[0] || "";
 
   const primaryAlignment =
     narrativeSignals?.primaryAlignment;
 
   const primaryTension =
     narrativeSignals?.primaryTension;
-
-    const socialTensions = [
-    "collaboration_tension",
-    "people_centered_tension",
-    "social_energy_tension"
-  ];
-
-  const analyticalTensions = [
-    "structured_reasoning_tension",
-    "technical_environment_tension",
-    "abstract_reasoning_tension"
-  ];
-
-  const hasSocialTension =
-    socialTensions.includes(
-      primaryTension
-    );
-
-  const hasAnalyticalTension =
-    analyticalTensions.includes(
-      primaryTension
-    );
   
     const secondaryAlignment =
     narrativeSignals?.secondaryAlignment;
@@ -492,14 +460,10 @@ if (
   const shouldAmplifyAlignment =
     fitTone === "High" &&
     strongAlignment;
-  
-    const suppressSocialRedundancy =
-    hasSocialTension &&
-    tensionNarratives.length > 0;
 
-  const suppressAnalyticalRedundancy =
-    hasAnalyticalTension &&
-    tensionNarratives.length > 0;
+  const shouldEscalateAdaptation =
+    fitTone !== "High" &&
+    highAdaptationPressure;
 
   if (
     interpretation.dominantInsight ===
@@ -585,53 +549,51 @@ if (
 }
 
 if (
+  secondaryAlignment &&
+  semanticLanguage?.alignments?.[
+    secondaryAlignment
+  ]
+) {
+
+  const secondaryNarrative =
+    semanticLanguage.alignments[
+      secondaryAlignment
+    ];
+
+  alignmentNarratives.push(
+    `The program may also reinforce strengths related to ${secondaryNarrative.toLowerCase()}.`
+  );
+}
+
+if (
+  primaryTension &&
   semanticLanguage?.tensions?.[
     primaryTension
   ]
 ) {
 
-  const tensionNarrative =
+  tensionNarratives.push(
     semanticLanguage.tensions[
       primaryTension
+    ]
+  );
+}
+
+if (
+  secondaryTension &&
+  semanticLanguage?.tensions?.[
+    secondaryTension
+  ]
+) {
+
+  const secondaryTensionNarrative =
+    semanticLanguage.tensions[
+      secondaryTension
     ];
 
-  const shouldSuppressNarrative =
-
-    (
-      hasSocialTension &&
-      tensionNarratives.some(
-        narrative =>
-          narrative.includes(
-            "social"
-          ) ||
-          narrative.includes(
-            "collaborative"
-          )
-      )
-    ) ||
-
-    (
-      hasAnalyticalTension &&
-      tensionNarratives.some(
-        narrative =>
-          narrative.includes(
-            "technical"
-          ) ||
-          narrative.includes(
-            "analytical"
-          ) ||
-          narrative.includes(
-            "structured"
-          )
-      )
-    );
-
-  if (!shouldSuppressNarrative) {
-
-    tensionNarratives.push(
-      tensionNarrative
-    );
-  }
+  tensionNarratives.push(
+    `Additional adjustment may also be required in areas related to ${secondaryTensionNarrative.toLowerCase()}.`
+  );
 }
 
   if (dynamicModifier) {
@@ -652,8 +614,14 @@ if (
   !suppressTensionNarrative
 ) {
 
+  const tensionNarrative =
+    "Some aspects of the program may still require behavioral adjustment over time.";
+
   tensionNarratives.push(
-    "Some aspects of the program may still require behavioral adjustment over time."
+    alignmentNarratives.length > 0 &&
+    cautionTransition
+      ? `${cautionTransition} ${tensionNarrative}`
+      : tensionNarrative
   );
 }
 
@@ -663,8 +631,19 @@ if (
   adaptationPotential.length > 0
 ) {
 
+  const adaptationNarrative =
+    shouldEscalateAdaptation
+      ? "Successfully adapting to the program may require more deliberate behavioral adjustment and sustained flexibility over time."
+      : "Your adaptability may help you navigate unfamiliar academic expectations more comfortably.";
+
   adaptationNarratives.push(
-    "Your adaptability may help you navigate unfamiliar academic expectations more comfortably."
+    tensionNarratives.length > 0 &&
+    adaptationTransition
+      ? `${adaptationTransition} ${adaptationNarrative}`
+      : alignmentNarratives.length > 0 &&
+        reinforcementTransition
+      ? `${reinforcementTransition} ${adaptationNarrative}`
+      : adaptationNarrative
   );
 }
 
