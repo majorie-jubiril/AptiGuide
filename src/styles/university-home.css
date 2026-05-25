@@ -403,6 +403,68 @@
   .analyzer-card {
     padding: 56px 28px;
   }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 0 20px;
+  }
+
+  .feature-card {
+    min-height: auto;
+    padding: 32px 24px;
+  }
+
+  .uoa-hero {
+    padding: 72px 20px;
+  }
+
+  .uoa-hero h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+
+  .uoa-hero p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .analyzer-card {
+    padding: 48px 20px;
+  }
+
+  .analyzer-card h2 {
+    font-size: 2rem;
+  }
+
+  .analyzer-card p {
+    font-size: 1rem;
+  }
+
+  .uoa-navbar {
+    padding: 24px 20px;
+  }
+
+  .uoa-brand {
+    gap: 14px;
+  }
+
+  .uoa-logo {
+    width: 56px;
+    height: 56px;
+  }
+
+  .uoa-brand h2 {
+    font-size: 1.1rem;
+  }
+
+  .uoa-brand p {
+    font-size: 0.85rem;
+  }
+
+  .uoa-navbar nav {
+    gap: 18px;
+  }
 }
 
 .feature-icon {

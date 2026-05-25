@@ -1276,50 +1276,48 @@ export default function Results() {
             {otherFits.length > 0 && (
               <div>
 
-                <div className="other-matches-parent-card">
+                <div className="matches-group-card other-matches-parent-card">
 
-                  <div
-                    className="other-matches-toggle"
-                  onClick={() =>
-                    setShowOtherFits(
-                      (prev) => !prev
-                    )
-                  }
-                >
+                 <div
+                    className="matches-group-header"
+                    onClick={() =>
+                      setShowOtherFits(
+                        (prev) => !prev
+                      )
+                    }
+                  >
 
-                  <div className="other-matches-content">
+                    <div className="matches-group-left">
 
-                    <div className="other-matches-header-row">
+                      <div className="matches-group-title-row">
 
-                      <h2 className="other-matches-title">
-                        Other Matches
-                      </h2>
+                        <h2>Other Matches</h2>
 
-                      <span className="other-matches-count">
-                        {otherFits.length} Programs
-                      </span>
+                        <span className="matches-count other-count">
+                          {otherFits.length} Programs
+                        </span>
+
+                      </div>
+
+                      <p className="matches-group-subtitle">
+                        Moderate & Low Fit programs — exploration still recommended
+                      </p>
 
                     </div>
 
-                    <p className="other-matches-subtitle">
-                      Moderate & Low Fit programs — exploration still recommended
-                    </p>
+                    <button className="matches-toggle-btn">
+
+                      {showOtherFits
+                        ? "−"
+                        : "+"}
+
+                    </button>
 
                   </div>
 
-                  <span className="other-matches-plus">
-
-                    {showOtherFits
-                      ? "−"
-                      : "+"}
-
-                  </span>
-
-                </div>
-
                   {showOtherFits && (
 
-                      <div className="other-matches-stack">
+                      <div className="strong-matches-grid">
 
                         {otherFits.map((fit, index) => {
 
@@ -1335,51 +1333,33 @@ export default function Results() {
                               className="other-match-row"
                             >
 
-                              <div className="other-match-row-top">
+                              <div className="strong-match-badge-group">
 
-                                <div className="other-match-row-left">
+                                  <span
+                                    className={`fit-badge ${levelClass}`}
+                                  >
+                                    {fit.level} Fit
+                                  </span>
 
-                                  <div className="other-match-row-meta">
+                                  <label className="compare-checkbox">
 
-                                    <span
-                                      className={`fit-badge ${levelClass}`}
-                                    >
-                                      {fit.level} Fit
-                                    </span>
-
-                                    <label className="compare-checkbox">
-
-                                      <input
-                                        type="checkbox"
-                                        checked={selectedPrograms.includes(
+                                    <input
+                                      type="checkbox"
+                                      checked={selectedPrograms.includes(
+                                        fit.program
+                                      )}
+                                      onChange={() =>
+                                        handleCompareToggle(
                                           fit.program
-                                        )}
-                                        onChange={() =>
-                                          handleCompareToggle(
-                                            fit.program
-                                          )
-                                        }
-                                      />
+                                        )
+                                      }
+                                    />
 
-                                      <span>Compare</span>
+                                    <span>Compare</span>
 
-                                    </label>
+                                  </label>
 
-                                  </div>
-
-                                  <h3 className="other-match-row-title">
-                                    {fit.program}
-                                  </h3>
-
-                                  <p className="other-match-row-description">
-                                    {PROGRAM_PROFILES[
-                                      fit?.program
-                                    ]?.description}
-                                  </p>
-
-                                </div>
-
-                                <div className="other-match-row-actions">
+                                <div className="strong-match-actions">
 
                                   <div
                                     className={`other-score-ring ${levelClass}`}
@@ -1417,7 +1397,17 @@ export default function Results() {
 
                               </div>
 
-                              <div className="details-toggle">
+                                <h3 className="other-match-row-title">
+                                  {fit.program}
+                                </h3>
+
+                                <p className="other-match-row-description">
+                                  {PROGRAM_PROFILES[
+                                    fit?.program
+                                  ]?.description}
+                                </p>
+
+                                <div className="details-toggle">
 
                                 <button
                                   className="show-details-btn"

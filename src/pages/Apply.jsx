@@ -625,7 +625,9 @@ export default function Apply() {
       ========================= */}
       <div className="success-body">
 
-        <div className="success-summary-card">
+        <div
+          className={`success-summary-card ${selectedProgram.level.toLowerCase()}`}
+        >
 
           {/* TOP ROW */}
           <div className="success-summary-top">
