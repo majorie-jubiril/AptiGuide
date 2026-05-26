@@ -46,7 +46,7 @@ export default function Results() {
     useState({});
   
   const [strongMatchesExpanded, setStrongMatchesExpanded] = 
-    useState(true);
+    useState(false);
 
   const [showTopIntelligence, setShowTopIntelligence] =
     useState(false);  
@@ -1652,243 +1652,425 @@ export default function Results() {
       {showCompareModal &&
         comparedPrograms.length >= 2 && (
 
-  <div
-    className="compare-modal-overlay"
-    onClick={() =>
-      setShowCompareModal(false)
-    }
-  >
-
-    <div
-    className="compare-modal"
-    onClick={(e) =>
-      e.stopPropagation()
-    }
-  >
-
-      <div className="compare-modal-header">
-
-        <h2>Program Comparison</h2>
-
-        <button
-          className="compare-close-btn"
+        <div
+          className="compare-modal-overlay"
           onClick={() =>
             setShowCompareModal(false)
           }
         >
-          ✕
-        </button>
-
-      </div>
-
-      <div className="compare-table">
-
-        <div className="compare-table-header">
-
-        <div className="compare-row-label empty-label"></div>
-
-        {comparedPrograms.map((program) => (
 
           <div
-            key={program.program}
-            className="compare-program-header"
-          >
+          className="compare-modal"
+          onClick={(e) =>
+            e.stopPropagation()
+          }
+        >
 
-            <h3>
-              {program.program}
-            </h3>
+            <div className="compare-modal-header">
 
-            <div className="compare-program-meta">
+              <h2>Program Comparison</h2>
 
-              <span
-                className={`fit-badge ${getLevelClass(
-                  program.level
-                )}`}
+              <button
+                className="compare-close-btn"
+                onClick={() =>
+                  setShowCompareModal(false)
+                }
               >
-                {program.level} Fit
-              </span>
-
-              <span className="compare-overall-score">
-                {program.percentage}%
-              </span>
+                ✕
+              </button>
 
             </div>
 
-            <div className="compare-progress-track">
+            <div className="compare-table">
 
-              <div
-                className={`compare-progress-fill ${getLevelClass(
-                  program.level
-                )}`}
-                style={{
-                  width: `${program.percentage}%`
-                }}
-              />
+              <div className="compare-table-header">
 
-            </div>
+              <div className="compare-row-label empty-label"></div>
 
-          </div>
-
-        ))}
-
-      </div>
-
-    {[
-      {
-        label: "Analytical",
-        key: "analytical"
-      },
-      {
-        label: "Social",
-        key: "social"
-      },
-      {
-        label: "Structure",
-        key: "structure"
-      },
-      {
-        label: "Creativity",
-        key: "creativity"
-      },
-      {
-        label: "Emotional Demand",
-        key: "emotionalDemand"
-      },
-      {
-        label: "Adaptability",
-        key: "adaptability"
-      }
-    ].map((item) => (
-
-      <div
-        key={item.key}
-        className="compare-data-row"
-      >
-
-        <div className="compare-row-label">
-          {item.label}
-        </div>
-
-        {comparedPrograms.map((program) => {
-
-          const value =
-            PROGRAM_PROFILES[
-              program.program
-            ]?.fitDimensions?.[
-              item.key
-            ] || 0;
-
-          return (
-
-            <div
-              key={program.program}
-              className="compare-data-cell"
-            >
-
-              <div className="compare-score-row">
-
-                <span>
-                  Score
-                </span>
-
-                <strong>
-                  {value}%
-                </strong>
-
-              </div>
-
-              <div className="compare-progress-track small">
+              {comparedPrograms.map((program) => (
 
                 <div
-                  className={`compare-progress-fill ${
-                    value >= 80
-                      ? "high"
-                      : value >= 60
-                      ? "moderate"
-                      : "low"
-                  }`}
-                  style={{
-                    width: `${value}%`
-                  }}
-                />
+                  key={program.program}
+                  className="compare-program-header"
+                >
 
-              </div>
+                  <h3>
+                    {program.program}
+                  </h3>
+
+                  <div className="compare-program-meta">
+
+                    <span
+                      className={`fit-badge ${getLevelClass(
+                        program.level
+                      )}`}
+                    >
+                      {program.level} Fit
+                    </span>
+
+                    <span className="compare-overall-score">
+                      {program.percentage}%
+                    </span>
+
+                  </div>
+
+                  <div className="compare-progress-track">
+
+                    <div
+                      className={`compare-progress-fill ${getLevelClass(
+                        program.level
+                      )}`}
+                      style={{
+                        width: `${program.percentage}%`
+                      }}
+                    />
+
+                  </div>
+
+                </div>
+
+              ))}
 
             </div>
 
-          );
-
-        })}
-
-      </div>
-    ))}
-
-    {[
-      {
-        label: "Environment",
-        key: "environment"
-      },
-      {
-        label: "Work Style",
-        key: "workStyle"
-      },
-      {
-        label: "Demands",
-        key: "demands"
-      },
-      {
-        label: "Reality Check",
-        key: "realityCheck"
-      }
-    ].map((section) => (
-
-      <div
-        key={section.key}
-        className="compare-data-row text-row"
-      >
-
-        <div className="compare-row-label">
-          {section.label}
-        </div>
-
-        {comparedPrograms.map((program) => {
-
-          let content = "";
-
-          if (section.key === "realityCheck") {
-            content =
-              PROGRAM_PROFILES[
-                program.program
-              ]?.realityCheck
-                ?.keyChallenge || "";
-          } else {
-            content =
-              PROGRAM_PROFILES[
-                program.program
-              ]?.[section.key] || "";
-          }
-
-          return (
+          {[
+            {
+              label: "Analytical",
+              key: "analytical"
+            },
+            {
+              label: "Social",
+              key: "social"
+            },
+            {
+              label: "Structure",
+              key: "structure"
+            },
+            {
+              label: "Creativity",
+              key: "creativity"
+            },
+            {
+              label: "Emotional Demand",
+              key: "emotionalDemand"
+            },
+            {
+              label: "Adaptability",
+              key: "adaptability"
+            }
+          ].map((item) => (
 
             <div
-              key={program.program}
-              className="compare-text-cell"
+              key={item.key}
+              className="compare-data-row"
             >
-              {content}
+
+              <div className="compare-row-label">
+                {item.label}
+              </div>
+
+              {comparedPrograms.map((program) => {
+
+                const value =
+                  PROGRAM_PROFILES[
+                    program.program
+                  ]?.fitDimensions?.[
+                    item.key
+                  ] || 0;
+
+                return (
+
+                  <div
+                    key={program.program}
+                    className="compare-data-cell"
+                  >
+
+                    <div className="compare-score-row">
+
+                      <span>
+                        Score
+                      </span>
+
+                      <strong>
+                        {value}%
+                      </strong>
+
+                    </div>
+
+                    <div className="compare-progress-track small">
+
+                      <div
+                        className={`compare-progress-fill ${
+                          value >= 80
+                            ? "high"
+                            : value >= 60
+                            ? "moderate"
+                            : "low"
+                        }`}
+                        style={{
+                          width: `${value}%`
+                        }}
+                      />
+
+                    </div>
+
+                  </div>
+
+                );
+
+              })}
+
+            </div>
+          ))}
+
+          {[
+            {
+              label: "Environment",
+              key: "environment"
+            },
+            {
+              label: "Work Style",
+              key: "workStyle"
+            },
+            {
+              label: "Demands",
+              key: "demands"
+            },
+            {
+              label: "Reality Check",
+              key: "realityCheck"
+            }
+          ].map((section) => (
+
+            <div
+              key={section.key}
+              className="compare-data-row text-row"
+            >
+
+              <div className="compare-row-label">
+                {section.label}
+              </div>
+
+              {comparedPrograms.map((program) => {
+
+                let content = "";
+
+                if (section.key === "realityCheck") {
+                  content =
+                    PROGRAM_PROFILES[
+                      program.program
+                    ]?.realityCheck
+                      ?.keyChallenge || "";
+                } else {
+                  content =
+                    PROGRAM_PROFILES[
+                      program.program
+                    ]?.[section.key] || "";
+                }
+
+                return (
+
+                  <div
+                    key={program.program}
+                    className="compare-text-cell"
+                  >
+                    {content}
+                  </div>
+
+                );
+
+              })}
+
             </div>
 
-          );
+          ))}
+                </div>
 
-        })}
+                {/* MOBILE COMPARE CARDS */}
+                <div className="mobile-compare-layout">
 
-      </div>
-    ))}
+                  {comparedPrograms.map((program, index) => {
+
+                    const levelClass =
+                      getLevelClass(program.level);
+
+                    return (
+
+                      <div
+                        key={index}
+                        className={`mobile-compare-card ${levelClass}`}
+                      >
+
+                        <h2 className="mobile-compare-title">
+                          {program.program}
+                        </h2>
+
+                        <div className="mobile-compare-meta">
+
+                          <span
+                            className={`fit-badge ${levelClass}`}
+                          >
+                            {program.level} Fit
+                          </span>
+
+                          <div
+                            className={`mobile-compare-score ${levelClass}`}
+                          >
+                            {program.percentage}%
+                          </div>
+
+                        </div>
+
+                        {PROGRAM_PROFILES[
+                          program?.program
+                        ]?.fitDimensions && (
+
+                          <div className="mobile-fit-breakdown">
+
+                            {Object.entries(
+                              PROGRAM_PROFILES[
+                                program?.program
+                              ]?.fitDimensions || {}
+                            ).map(([key, value]) => (
+
+                              <div
+                                key={key}
+                                className="mobile-fit-row"
+                              >
+
+                                <div className="mobile-fit-header">
+
+                                  <span className="mobile-fit-label">
+
+                                    {key
+                                      .replace(/([A-Z])/g, " $1")
+                                      .replace(/^./, (str) =>
+                                        str.toUpperCase()
+                                      )}
+
+                                  </span>
+
+                                  <span className="mobile-fit-value">
+                                    {value}%
+                                  </span>
+
+                                </div>
+
+                                <div className="mobile-fit-bar">
+
+                                  <div
+                                    className={`mobile-fit-fill ${
+                                      value >= 80
+                                        ? "high-fit-fill"
+                                        : value >= 60
+                                        ? "moderate-fit-fill"
+                                        : "low-fit-fill"
+                                    }`}
+                                    style={{
+                                      width: `${value}%`
+                                    }}
+                                  />
+
+                                </div>
+
+                              </div>
+
+                            ))}
+
+                          </div>
+                        )}
+
+                               {/* MOBILE INSIGHTS */}
+
+                                <details className="mobile-compare-details">
+
+                                  <summary className="mobile-compare-toggle">
+                                    <span className="view-more-text">
+                                      View More
+                                    </span>
+
+                                    <span className="view-less-text">
+                                      View Less
+                                    </span>
+                                  </summary>
+
+                                  <div className="mobile-insights-content">
+
+                                    {/* ENVIRONMENT */}
+                                    <div className="mobile-insight-section">
+
+                                      <h4>Environment</h4>
+
+                                      <p>
+                                        {
+                                          PROGRAM_PROFILES[
+                                            program?.program
+                                          ]?.environment
+                                        }
+                                      </p>
+
+                                    </div>
+
+                                    {/* WORK STYLE */}
+                                    <div className="mobile-insight-section">
+
+                                      <h4>Work Style</h4>
+
+                                      <p>
+                                        {
+                                          PROGRAM_PROFILES[
+                                            program?.program
+                                          ]?.workStyle
+                                        }
+                                      </p>
+
+                                    </div>
+
+                                    {/* DEMANDS */}
+                                    <div className="mobile-insight-section">
+
+                                      <h4>Demands</h4>
+
+                                      <p>
+                                        {
+                                          PROGRAM_PROFILES[
+                                            program?.program
+                                          ]?.demands
+                                        }
+                                      </p>
+
+                                    </div>
+
+                                    {/* REALITY CHECK */}
+                                    <div className="mobile-insight-section">
+
+                                      <h4>Reality Check</h4>
+
+                                      <p>
+                                        {
+                                          PROGRAM_PROFILES[
+                                            program?.program
+                                          ]?.realityCheck
+                                            ?.keyChallenge
+                                        }
+                                      </p>
+
+                                    </div>
+
+                                  </div>
+
+                                </details> 
+                      </div>
+                    );
+
+                  })}
+
+                </div>
+
           </div>
 
-    </div>
-
-  </div>
-)}      
+        </div>
+      )}      
 
       <div
         style={{

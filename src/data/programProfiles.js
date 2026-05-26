@@ -3,7 +3,7 @@ export const PROGRAM_PROFILES = {
     category: "Business & Finance",
 
     description:
-        "Accounting focuses on financial analysis, auditing, reporting, and structured financial decision-making.",
+        "Focuses on financial analysis, auditing, reporting, and structured financial decision-making.",
 
     environment:
         "Structured environments with clear systems, regulations, and analytical workflows.",
@@ -116,7 +116,7 @@ export const PROGRAM_PROFILES = {
     category: "Technology",
 
     description:
-        "Computer Science focuses on problem-solving, software systems, computation, and logical thinking.",
+        "Focuses on problem-solving, software systems, computation, and logical thinking.",
 
     environment:
         "Technical environments involving systems, programming, analysis, and independent problem-solving.",
@@ -227,7 +227,7 @@ export const PROGRAM_PROFILES = {
     category: "Business & People Management",
 
     description:
-        "Human Resource Management focuses on people development, workplace relationships, communication, and organizational support.",
+        "Focuses on people development, workplace relationships, communication, and organizational support.",
 
     environment:
         "Collaborative environments involving communication, teamwork, mediation, and employee support.",
@@ -350,7 +350,7 @@ export const PROGRAM_PROFILES = {
     category: "Creative Arts",
 
     description:
-      "Graphic Design focuses on visual communication, creative expression, design systems, and artistic problem-solving.",
+      "Explores visual communication, creative expression, design systems, and artistic problem-solving.",
 
     environment:
       "Creative environments that encourage experimentation, innovation, and visual storytelling.",
@@ -473,7 +473,7 @@ export const PROGRAM_PROFILES = {
     category: "Law",
 
     description:
-      "Law focuses on reasoning, structured argument, analysis, advocacy, and interpretation of legal systems.",
+      "Centered on reasoning, structured argument, analysis, advocacy, and interpretation of legal systems.",
 
     environment:
       "Structured and intellectually demanding environments involving analysis, debate, and critical reasoning.",
@@ -597,7 +597,7 @@ export const PROGRAM_PROFILES = {
     category: "Business & Management",
 
     description:
-        "Business Administration focuses on leadership, organizational management, strategic decision-making, and business operations.",
+        "Covers leadership, organizational management, strategic decision-making, and business operations.",
 
     environment:
         "Collaborative and fast-paced environments involving teamwork, presentations, leadership responsibilities, and strategic planning.",
@@ -722,7 +722,7 @@ export const PROGRAM_PROFILES = {
     category: "Finance & Economics",
 
     description:
-        "Banking and Finance focuses on financial systems, investment analysis, risk management, and strategic financial decision-making.",
+        "Explores financial systems, investment analysis, risk management, and strategic financial decision-making.",
 
     environment:
         "Structured and analytical environments involving financial analysis, forecasting, reporting, and risk evaluation.",
@@ -845,7 +845,7 @@ export const PROGRAM_PROFILES = {
     category: "Operations & Logistics",
 
     description:
-        "Procurement and Supply Chain Management focuses on logistics, sourcing, operational efficiency, inventory systems, and organizational coordination.",
+        "Covers logistics, sourcing, operational efficiency, inventory systems, and organizational coordination.",
 
     environment:
         "Structured operational environments involving planning, coordination, systems management, and logistical problem-solving.",
@@ -967,7 +967,7 @@ export const PROGRAM_PROFILES = {
     category: "Marketing & Communication",
 
     description:
-        "Marketing focuses on consumer behavior, branding, communication strategy, market analysis, and creative promotion.",
+        "Explores consumer behavior, branding, communication strategy, market analysis, and creative promotion.",
 
     environment:
         "Dynamic and collaborative environments involving communication, presentations, campaigns, teamwork, and creative strategy.",
@@ -1091,7 +1091,7 @@ export const PROGRAM_PROFILES = {
     category: "Business Innovation",
 
     description:
-        "Entrepreneurship focuses on business creation, innovation, opportunity identification, leadership, and strategic risk-taking.",
+        "Focuses on business creation, innovation, opportunity identification, leadership, and strategic risk-taking.",
 
     environment:
         "Highly dynamic environments involving uncertainty, innovation, experimentation, and independent initiative.",
@@ -1214,7 +1214,7 @@ export const PROGRAM_PROFILES = {
     category: "Global Business",
 
     description:
-        "International Business focuses on global markets, cross-cultural communication, international trade, and strategic business operations.",
+        "Covers global markets, cross-cultural communication, international trade, and strategic business operations.",
 
     environment:
         "Collaborative and globally connected environments involving communication, negotiation, teamwork, and international coordination.",
@@ -1337,7 +1337,7 @@ export const PROGRAM_PROFILES = {
     category: "Technology",
 
     description:
-        "Information Technology focuses on computer systems, technical support, digital infrastructure, networking, and practical technology implementation.",
+        "Focuses on computer systems, technical support, digital infrastructure, networking, and practical technology implementation.",
 
     environment:
         "Technical and collaborative environments involving systems management, troubleshooting, implementation, and user support.",
@@ -1460,7 +1460,7 @@ export const PROGRAM_PROFILES = {
     category: "Software Development",
 
     description:
-        "Software Engineering focuses on designing, building, testing, and maintaining software systems and applications.",
+        "Explores designing, building, testing, and maintaining software systems and applications.",
 
     environment:
         "Structured technical environments involving programming, systems design, collaboration, and long-term project development.",
@@ -1585,7 +1585,7 @@ export const PROGRAM_PROFILES = {
     category: "Data & Analytics",
 
     description:
-        "Data Science focuses on analyzing data, identifying patterns, building predictive models, and generating insights for decision-making.",
+        "Centered on analyzing data, identifying patterns, building predictive models, and generating insights for decision-making.",
 
     environment:
         "Analytical environments involving data interpretation, statistics, programming, and research-oriented problem-solving.",
@@ -1708,7 +1708,7 @@ export const PROGRAM_PROFILES = {
     category: "Engineering",
 
     description:
-        "Electrical and Electronic Engineering focuses on electrical systems, electronics, circuit design, power systems, and technical innovation.",
+        "Explores electrical systems, electronics, circuit design, power systems, and technical innovation.",
 
     environment:
         "Highly technical environments involving experimentation, calculations, systems analysis, and engineering problem-solving.",
@@ -1831,7 +1831,7 @@ export const PROGRAM_PROFILES = {
     category: "Engineering & Infrastructure",
 
     description:
-        "Civil Engineering focuses on infrastructure development, construction systems, structural design, and large-scale project execution.",
+        "Centered on infrastructure development, construction systems, structural design, and large-scale project execution.",
 
     environment:
         "Project-oriented environments involving technical planning, teamwork, fieldwork, and structured engineering processes.",
@@ -1954,7 +1954,7 @@ export const PROGRAM_PROFILES = {
     category: "Medical & Laboratory Science",
 
     description:
-        "Biomedical Science focuses on laboratory research, human biology, disease investigation, and scientific analysis within healthcare systems.",
+        "Built around laboratory research, human biology, disease investigation, and scientific analysis within healthcare systems.",
 
     environment:
         "Scientific and research-oriented environments involving laboratory work, analysis, experimentation, and technical investigation.",
@@ -2077,7 +2077,7 @@ export const PROGRAM_PROFILES = {
     category: "Economics & Policy",
 
     description:
-        "Economics focuses on markets, financial systems, policy analysis, resource allocation, and strategic decision-making.",
+        "Explores markets, financial systems, policy analysis, resource allocation, and strategic decision-making.",
 
     environment:
         "Analytical and research-oriented environments involving data interpretation, forecasting, policy analysis, and structured reasoning.",
@@ -2200,7 +2200,7 @@ export const PROGRAM_PROFILES = {
     category: "Politics & Governance",
 
     description:
-        "Political Science focuses on governance, leadership, policy systems, public administration, and societal decision-making.",
+        "Centered on governance, leadership, policy systems, public administration, and societal decision-making.",
 
     environment:
         "Discussion-driven and strategic environments involving debate, analysis, communication, and leadership-oriented thinking.",
@@ -2296,7 +2296,7 @@ export const PROGRAM_PROFILES = {
     category: "Social Sciences",
 
     description:
-        "Sociology focuses on human behavior, social systems, communities, culture, and societal relationships.",
+        "Built around human behavior, social systems, communities, culture, and societal relationships.",
 
     environment:
         "Collaborative and research-oriented environments involving observation, communication, analysis, and community engagement.",
@@ -2419,7 +2419,7 @@ export const PROGRAM_PROFILES = {
     category: "Behavioral Science",
 
     description:
-        "Psychology focuses on human behavior, mental processes, emotional wellbeing, and understanding how people think and interact.",
+        "Focuses on human behavior, mental processes, emotional wellbeing, and understanding how people think and interact.",
 
     environment:
         "Supportive and research-oriented environments involving observation, communication, analysis, and human-centered problem-solving.",
@@ -2542,7 +2542,7 @@ export const PROGRAM_PROFILES = {
     category: "Media & Communication",
 
     description:
-        "Communication Studies focuses on media, messaging, public interaction, storytelling, and communication strategy.",
+        "Explores media, messaging, public interaction, storytelling, and communication strategy.",
 
     environment:
         "Collaborative and expressive environments involving presentations, teamwork, audience engagement, and media communication.",
@@ -2665,7 +2665,7 @@ export const PROGRAM_PROFILES = {
     category: "Public Relations & Media",
 
     description:
-        "Public Relations focuses on reputation management, communication strategy, media engagement, and organizational messaging.",
+        "Explores reputation management, communication strategy, media engagement, and organizational messaging.",
 
     environment:
         "Fast-paced and people-oriented environments involving communication, branding, presentations, and relationship management.",
@@ -2788,7 +2788,7 @@ export const PROGRAM_PROFILES = {
     category: "Media & Journalism",
 
     description:
-        "Journalism focuses on reporting, investigation, storytelling, media communication, and public information.",
+        "Centered on reporting, investigation, storytelling, media communication, and public information.",
 
     environment:
         "Fast-moving environments involving research, interviews, deadlines, writing, and investigative communication.",
@@ -2911,7 +2911,7 @@ export const PROGRAM_PROFILES = {
     category: "Creative Arts",
 
     description:
-        "Fine Arts focuses on artistic expression, visual creativity, experimentation, and communicating ideas through creative work.",
+        "Built around artistic expression, visual creativity, experimentation, and communicating ideas through creative work.",
 
     environment:
         "Creative and flexible environments encouraging experimentation, originality, and personal expression.",
@@ -3034,7 +3034,7 @@ export const PROGRAM_PROFILES = {
     category: "Healthcare",
 
     description:
-        "Nursing focuses on patient care, health support, medical collaboration, and providing physical and emotional care within healthcare systems.",
+        "Explores patient care, health support, medical collaboration, and providing physical and emotional care within healthcare systems.",
 
     environment:
         "People-centered healthcare environments involving teamwork, emotional support, communication, and clinical responsibility.",
@@ -3146,7 +3146,7 @@ export const PROGRAM_PROFILES = {
     category: "Healthcare & Community Development",
 
     description:
-        "Public Health focuses on community wellbeing, disease prevention, health education, policy, and improving population health systems.",
+        "Built around community wellbeing, disease prevention, health education, policy, and improving population health systems.",
 
     environment:
         "Collaborative and research-oriented environments involving community engagement, analysis, education, and healthcare strategy.",
