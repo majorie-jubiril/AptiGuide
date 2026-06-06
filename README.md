@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# AptiGuide
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Explainable Behavioral Compatibility & University Program Recommendation Platform
 
-## Available Scripts
+AptiGuide is an explainable behavioral compatibility platform designed to help prospective university students make more informed academic decisions.
 
-In the project directory, you can run:
+Rather than recommending programs solely based on interests or personality categories, AptiGuide evaluates compatibility between a student's behavioral profile and the realities of specific academic environments. The system combines personality interpretation, program intelligence, fit analysis, and explainable recommendation narratives to provide transparent decision support.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## The Problem
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Students often select university programs with limited visibility into:
 
-### `npm test`
+* Long-term program compatibility
+* Learning environment expectations
+* Academic demands
+* Work style alignment
+* Behavioral fit
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Traditional recommendation tools frequently provide generic personality results without explaining why a particular program may or may not be suitable.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## The Solution
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+AptiGuide evolved from a simple personality assessment into an explainable behavioral reasoning platform.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The system analyzes behavioral signals, evaluates compatibility across multiple dimensions, and generates personality-aware, program-aware, and fit-aware recommendation narratives.
 
-### `npm run eject`
+Rather than producing a single recommendation score, AptiGuide exposes the reasoning behind recommendations to improve trust, transparency, and decision confidence.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Key Capabilities
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Behavioral Compatibility Analysis
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Evaluates compatibility between student behavioral tendencies and academic program characteristics.
 
-## Learn More
+### Program Intelligence Layer
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Provides program-specific context rather than generic recommendation explanations.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Explainable Recommendation Narratives
 
-### Code Splitting
+Generates transparent recommendation explanations that adapt to personality traits, program characteristics, and compatibility levels.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Multi-Dimensional Fit Breakdown
 
-### Analyzing the Bundle Size
+Breaks compatibility into multiple dimensions including:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* Analytical Fit
+* Structure Fit
+* Creativity Fit
+* Adaptability
+* Environmental Alignment
 
-### Making a Progressive Web App
+### Career Visibility
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Highlights potential career pathways associated with recommended programs.
 
-### Advanced Configuration
+### Application Continuity
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Preserves recommendation context throughout the application journey.
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Technology Stack
 
-### `npm run build` fails to minify
+* React
+* JavaScript
+* CSS
+* Vercel
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## Live Demo
+
+https://admissions-system-psi.vercel.app
+
+---
+
+## Repository Status
+
+AptiGuide evolved from a personality assessment project into an explainable behavioral compatibility platform focused on transparency, reasoning visibility, and informed academic decision-making.
+
+The project explores how behavioral intelligence, program intelligence, and explainability UX can work together to create more trustworthy recommendation experiences.
