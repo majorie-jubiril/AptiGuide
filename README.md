@@ -68,6 +68,56 @@ Recommendation context is preserved throughout the application journey, allowing
 
 <img width="1134" height="545" alt="Application_Guidance" src="https://github.com/user-attachments/assets/882a1eb8-1b66-45ce-ad34-244dd03edf60" />
 
+---
+
+## Architecture Overview
+
+AptiGuide is built as a layered behavioral reasoning system that transforms assessment responses into explainable academic recommendations.
+
+```text
+Behavioral Assessment
+        ↓
+Personality Intelligence Layer
+        ↓
+Program Intelligence Layer
+        ↓
+Compatibility Engine
+        ↓
+Behavioral Narrative Composition
+        ↓
+Program Recommendations
+        ↓
+Application Continuity
+
+```
+
+### Behavioral Assessment
+
+Captures behavioral signals through scenario-based questions rather than relying on direct personality labels.
+
+### Personality Intelligence Layer
+
+Interprets behavioral tendencies into meaningful personality insights that influence recommendation reasoning.
+
+### Program Intelligence Layer
+
+Models academic programs through structured profiles describing learning environments, work styles, expectations, and academic demands.
+
+### Compatibility Engine
+
+Evaluates compatibility between student behavioral tendencies and program characteristics across multiple dimensions.
+
+### Behavioral Narrative Composition
+
+Generates personality-aware, program-aware, and fit-aware recommendation explanations rather than generic recommendation messages.
+
+### Program Recommendations
+
+Produces ranked recommendations supported by compatibility scores, fit analysis, and explainable reasoning.
+
+### Application Continuity
+
+Preserves recommendation context throughout the application process to maintain transparency and decision confidence.
 
 ## Key Capabilities
 
