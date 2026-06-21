@@ -74,7 +74,7 @@ export default function Analyzer() {
 
         // 🔹 Save to backend
           try {
-            const response = await fetch("http://localhost:5000/api/results", {
+            const response = await fetch("https://apti-backend-8fhm.onrender.com/api/results", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({

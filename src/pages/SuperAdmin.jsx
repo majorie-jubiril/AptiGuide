@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles/SupaAdmin.css";
 
-const BACKEND_URL = "http://localhost:5000";
+const BACKEND_URL = "https://apti-backend-8fhm.onrender.com";
 
 export default function SuperAdmin() {
   const [password, setPassword] = useState("");
