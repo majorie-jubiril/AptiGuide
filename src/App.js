@@ -4,6 +4,7 @@ import Analyzer from "./pages/Analyzer";
 import Results from "./pages/Results";
 import Apply from "./pages/Apply";
 import AdminDashboard from "./pages/AdminDashboard";
+import SuperAdmin from "./pages/SuperAdmin";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/results" element={<Results />} />
         <Route path="/apply" element={<Apply />} />
         <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/superadmin" element={<SuperAdmin />} />
       </Routes>
     </Router>
   );

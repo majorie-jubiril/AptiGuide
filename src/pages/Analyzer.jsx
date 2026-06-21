@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Container from "../layout/Container";
 import PageWrapper from "../layout/PageWrapper";
 import { getRandomQuestions } from "../data/questions";
@@ -12,6 +12,8 @@ import "../styles/analyzer.css";
 
 export default function Analyzer() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const apiKey = new URLSearchParams(location.search).get("api_key");
 
   // ✅ Generate randomized questions ONCE per session
   const [questions] = useState(() => getRandomQuestions(12));
@@ -79,7 +81,8 @@ export default function Analyzer() {
                 personality_type: personality.type,
                 scores,
                 fits,
-                top_program: topProgram?.program || "Unknown"
+                top_program: topProgram?.program || "Unknown",
+                api_key: apiKey
               })
             });
 
