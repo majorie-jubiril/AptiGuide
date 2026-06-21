@@ -7,6 +7,7 @@ import {
   buildScoresFromAnswers,
   generateFitsFromScores
 } from "../utils/fitEngine";
+import { getPersonalitySummary } from "../utils/insights";
 import "../styles/analyzer.css";
 
 export default function Analyzer() {
@@ -35,7 +36,7 @@ export default function Analyzer() {
   const progress = ((currentIndex + 1) / totalQuestions) * 100;
 
   // ✅ NEW ANSWER HANDLER (weights-based)
-  const handleAnswer = (question, option) => {
+  const handleAnswer = async (question, option) => {
     const updatedAnswers = [
       ...answers,
       {
@@ -63,6 +64,42 @@ export default function Analyzer() {
           })
         );
 
+        // 🔹 Get personality type
+        const personality = getPersonalitySummary(scores);
+        const topProgram = [...fits]
+          .filter(f => f && typeof f.percentage === "number")
+          .sort((a, b) => b.percentage - a.percentage)[0];
+
+        // 🔹 Save to backend
+          try {
+            const response = await fetch("http://localhost:5000/api/results", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                personality_type: personality.type,
+                scores,
+                fits,
+                top_program: topProgram?.program || "Unknown"
+              })
+            });
+
+            const savedData = await response.json();
+
+            if (savedData?.data?.[0]?.id) {
+              const existing = JSON.parse(
+                localStorage.getItem("analyzerResults") || "{}"
+              );
+              localStorage.setItem(
+                "analyzerResults",
+                JSON.stringify({
+                  ...existing,
+                  resultId: savedData.data[0].id
+                })
+              );
+            }
+          } catch (saveErr) {
+            console.warn("Could not save to backend:", saveErr);
+          }
         navigate("/results", {
           state: {
             answers: updatedAnswers,
@@ -71,8 +108,8 @@ export default function Analyzer() {
           }
         });
       } catch (err) {
-          console.error("ANALYZER ERROR:", err);
-        }
+        console.error("ANALYZER ERROR:", err);
+      }
 
       return;
     }

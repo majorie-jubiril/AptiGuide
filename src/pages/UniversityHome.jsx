@@ -27,7 +27,7 @@ function UniversityHome() {
           <a href="#programs">Programs</a>
           <a href="#about">About</a>
 
-          <Link to="/">
+          <Link to="/analyzer">
             Apply
           </Link>
         </nav>

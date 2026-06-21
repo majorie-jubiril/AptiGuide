@@ -15,8 +15,6 @@ export default function Apply() {
   const navigate = useNavigate();
 
   const selectedProgram = location.state?.selectedProgram;
-    location.state?.selectedProgram ||
-    JSON.parse(localStorage.getItem("selectedProgram"));
 
   const [step, setStep] = useState(1);
   const scores = location.state?.scores;
@@ -590,7 +588,24 @@ export default function Apply() {
 
               <button
                 className="submit-btn review-submit-btn"
-                onClick={() => {
+                onClick={async () => {
+                  try {
+                    const resultId = JSON.parse(
+                      localStorage.getItem("analyzerResults")
+                    )?.resultId;
+
+                    if (resultId) {
+                      await fetch(`http://localhost:5000/api/results/${resultId}`, {
+                        method: "PATCH",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                          applied_program: selectedProgram.program
+                        })
+                      });
+                    }
+                  } catch (err) {
+                    console.warn("Could not save applied program:", err);
+                  }
                   localStorage.removeItem("applicationData");
                   setStep(6);
                 }}
