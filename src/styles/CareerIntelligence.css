@@ -1,0 +1,258 @@
+/* CareerIntelligence.css
+   ─────────────────────────────────────────────────────────────────
+   Career tab content styles.
+   Class names that mirror results.css (top-meta, top-badge,
+   score-ring, matches-group-card, etc.) are intentionally reused —
+   the HTML structure is identical so they inherit those rules.
+   Only career-specific elements get new declarations here.
+   ─────────────────────────────────────────────────────────────────
+*/
+
+/* Wrapper — matches the program results section spacing */
+.career-intelligence {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0;
+}
+
+/* ── TOP CARD ──────────────────────────────────────────────────── */
+
+/* Green header bar — identical pattern to program top card */
+.career-intelligence .top-recommendation {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+}
+
+.career-intelligence .top-meta {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.career-intelligence .top-label {
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.career-intelligence .top-card-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.5rem 1.25rem 0;
+}
+
+.career-intelligence .top-card-info {
+  flex: 1;
+}
+
+.career-intelligence .top-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 0.4rem;
+}
+
+.career-intelligence .top-card-desc {
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Toggle button */
+.career-intelligence .top-toggle {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  border-top: 1px solid #f1f5f9;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #7c3aed;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.career-intelligence .top-toggle:hover {
+  background: #faf5ff;
+}
+
+/* Expanded content */
+.career-intelligence .top-expanded {
+  padding: 1.25rem;
+  border-top: 1px solid #f1f5f9;
+  background: #fafafa;
+}
+
+.career-intelligence .expanded-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 0.6rem;
+}
+
+.career-intelligence .expanded-subheading {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #475569;
+  margin: 1rem 0 0.4rem;
+}
+
+.career-intelligence .expanded-summary {
+  font-size: 0.875rem;
+  color: #475569;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.career-intelligence .expanded-skills {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 0.875rem;
+  color: #475569;
+  line-height: 1.8;
+}
+
+/* "Build Profile →" CTA */
+.career-intelligence .build-profile-btn {
+  display: inline-block;
+  margin-top: 1.25rem;
+  padding: 0.6rem 1.25rem;
+  background: #7c3aed;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.career-intelligence .build-profile-btn:hover {
+  background: #6d28d9;
+}
+
+/* ── MATCHES SECTION ───────────────────────────────────────────── */
+
+.career-intelligence .matches-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.career-intelligence .matches-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+/* Group cards — mirrors .matches-group-card from results.css */
+.career-intelligence .matches-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.career-intelligence .matches-group-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.career-intelligence .match-card-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.career-intelligence .match-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.career-intelligence .match-card-desc {
+  font-size: 0.8rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* "Build CV" button */
+.career-intelligence .build-cv-btn {
+  padding: 0.45rem 1rem;
+  background: #7c3aed;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.career-intelligence .build-cv-btn:hover {
+  background: #6d28d9;
+}
+
+.career-intelligence .build-cv-btn.secondary {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.career-intelligence .build-cv-btn.secondary:hover {
+  background: #e2e8f0;
+}
+
+/* Other matches — slightly lighter cards */
+.career-intelligence .other-matches {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.career-intelligence .other-match-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1.25rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+/* ── GROWTH AREAS ──────────────────────────────────────────────── */
+
+.career-intelligence .growth-areas {
+  padding: 1.25rem;
+  background: #faf5ff;
+  border: 1px solid #ede9fe;
+  border-radius: 10px;
+}
+
+.career-intelligence .growth-list {
+  margin: 0.75rem 0 0;
+  padding-left: 1.25rem;
+  font-size: 0.875rem;
+  color: #475569;
+  line-height: 1.9;
+}

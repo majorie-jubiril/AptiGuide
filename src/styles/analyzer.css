@@ -138,3 +138,37 @@
   letter-spacing: 0.1px;
   line-height: 1.5; 
 }
+
+.analyzer-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 24px;
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 5px solid #e2e8f0;
+  border-top-color: #7c3aed;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.loading-subtitle {
+  font-size: 1rem;
+  color: #64748b;
+}

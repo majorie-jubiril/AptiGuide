@@ -20,6 +20,7 @@ export default function Analyzer() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   // ✅ Guard
   if (!questions || questions.length === 0) {
@@ -37,8 +38,8 @@ export default function Analyzer() {
 
   const progress = ((currentIndex + 1) / totalQuestions) * 100;
 
-  // ✅ NEW ANSWER HANDLER (weights-based)
-  const handleAnswer = async (question, option) => {
+  // ✅ ANSWER HANDLER
+  const handleAnswer = (question, option) => {
     const updatedAnswers = [
       ...answers,
       {
@@ -49,70 +50,55 @@ export default function Analyzer() {
 
     // LAST QUESTION → PROCESS
     if (currentIndex === totalQuestions - 1) {
-      try {
-        // 🔹 Build scores from weights
-        const scores = buildScoresFromAnswers(updatedAnswers);
-        localStorage.setItem("personalityScores", JSON.stringify(scores));
 
-        // 🔹 Generate program fits
-        const fits = generateFitsFromScores(scores);
+      // Show loading screen immediately
+      setIsLoading(true);
 
-        localStorage.setItem(
-          "analyzerResults",
-          JSON.stringify({
-            answers: updatedAnswers,
-            scores,
-            fits,
-          })
-        );
+      // Build scores and fits locally (instant)
+      const scores = buildScoresFromAnswers(updatedAnswers);
+      localStorage.setItem("personalityScores", JSON.stringify(scores));
 
-        // 🔹 Get personality type
-        const personality = getPersonalitySummary(scores);
-        const topProgram = [...fits]
-          .filter(f => f && typeof f.percentage === "number")
-          .sort((a, b) => b.percentage - a.percentage)[0];
+      const fits = generateFitsFromScores(scores);
+      localStorage.setItem(
+        "analyzerResults",
+        JSON.stringify({ answers: updatedAnswers, scores, fits })
+      );
 
-        // 🔹 Save to backend
-          try {
-            const response = await fetch("https://apti-backend-8fhm.onrender.com/api/results", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                personality_type: personality.type,
-                scores,
-                fits,
-                top_program: topProgram?.program || "Unknown",
-                api_key: apiKey
-              })
-            });
+      const personality = getPersonalitySummary(scores);
+      const topProgram = [...fits]
+        .filter(f => f && typeof f.percentage === "number")
+        .sort((a, b) => b.percentage - a.percentage)[0];
 
-            const savedData = await response.json();
+      // Navigate to results immediately — don't wait for backend
+      navigate("/results", {
+        state: { answers: updatedAnswers, scores, fits }
+      });
 
-            if (savedData?.data?.[0]?.id) {
-              const existing = JSON.parse(
-                localStorage.getItem("analyzerResults") || "{}"
-              );
-              localStorage.setItem(
-                "analyzerResults",
-                JSON.stringify({
-                  ...existing,
-                  resultId: savedData.data[0].id
-                })
-              );
-            }
-          } catch (saveErr) {
-            console.warn("Could not save to backend:", saveErr);
+      // Save to backend in background (non-blocking)
+      fetch("https://apti-backend-8fhm.onrender.com/api/results", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          personality_type: personality.type,
+          scores,
+          fits,
+          top_program: topProgram?.program || "Unknown",
+          api_key: apiKey
+        })
+      })
+        .then(res => res.json())
+        .then(savedData => {
+          if (savedData?.data?.[0]?.id) {
+            const existing = JSON.parse(
+              localStorage.getItem("analyzerResults") || "{}"
+            );
+            localStorage.setItem(
+              "analyzerResults",
+              JSON.stringify({ ...existing, resultId: savedData.data[0].id })
+            );
           }
-        navigate("/results", {
-          state: {
-            answers: updatedAnswers,
-            scores,
-            fits
-          }
-        });
-      } catch (err) {
-        console.error("ANALYZER ERROR:", err);
-      }
+        })
+        .catch(err => console.warn("Could not save to backend:", err));
 
       return;
     }
@@ -120,6 +106,21 @@ export default function Analyzer() {
     setAnswers(updatedAnswers);
     setCurrentIndex((prev) => prev + 1);
   };
+
+  // Show loading screen while processing
+  if (isLoading) {
+    return (
+      <PageWrapper>
+        <Container>
+          <div className="analyzer-loading">
+            <div className="loading-spinner" />
+            <h2 className="loading-title">Analyzing your personality...</h2>
+            <p className="loading-subtitle">We're matching your profile to the best programs for you.</p>
+          </div>
+        </Container>
+      </PageWrapper>
+    );
+  }
 
   return (
     <PageWrapper>
@@ -153,7 +154,6 @@ export default function Analyzer() {
 
             <div className="options">
               {(currentQuestion?.options || [])
-                // ✅ Shuffle options (anti-pattern memorization)
                 .sort(() => Math.random() - 0.5)
                 .map((opt, index) => (
                   <div
