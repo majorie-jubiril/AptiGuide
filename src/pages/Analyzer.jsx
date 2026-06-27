@@ -7,6 +7,7 @@ import {
   buildScoresFromAnswers,
   generateFitsFromScores
 } from "../utils/fitEngine";
+import { mapPrograms } from "../data/programMappings";
 import { getPersonalitySummary } from "../utils/insights";
 import "../styles/analyzer.css";
 
@@ -39,7 +40,7 @@ export default function Analyzer() {
   const progress = ((currentIndex + 1) / totalQuestions) * 100;
 
   // ✅ ANSWER HANDLER
-  const handleAnswer = (question, option) => {
+  const handleAnswer = async (question, option) => {
     const updatedAnswers = [
       ...answers,
       {
@@ -58,7 +59,19 @@ export default function Analyzer() {
       const scores = buildScoresFromAnswers(updatedAnswers);
       localStorage.setItem("personalityScores", JSON.stringify(scores));
 
-      const fits = generateFitsFromScores(scores);
+      // Fetch this university's programmes
+      const response = await fetch(
+        `https://apti-backend-8fhm.onrender.com/api/programs?api_key=${apiKey}`
+      );
+
+      const result = await response.json();
+
+      // Convert API programmes into behavioural profiles
+      const mappedPrograms = mapPrograms(result.data);
+
+      // Calculate behavioural fit
+      const fits = generateFitsFromScores(scores, mappedPrograms);
+
       localStorage.setItem(
         "analyzerResults",
         JSON.stringify({ answers: updatedAnswers, scores, fits })

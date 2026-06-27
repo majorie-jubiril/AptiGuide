@@ -117,8 +117,10 @@ export function calculateFit(rawScores, program) {
 /**
  * STEP 7: Generate all program fits
  */
-export function generateFitsFromScores(scores) {
-  return PROGRAMS.map((program) => {
+export function generateFitsFromScores(scores, programs) {
+  const source = programs || PROGRAMS;
+
+  return source.map((program) => {
     const { percentage, level } = calculateFit(scores, program);
 
     return {
