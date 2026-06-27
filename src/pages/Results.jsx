@@ -15,6 +15,7 @@ import "../styles/results.css";
 
 import { PERSONALITY_PROFILES } from "../data/personalityProfiles";
 import { PROGRAM_PROFILES } from "../data/programProfiles";
+import { PROGRAM_NAME_MAP } from "../data/programMappings";
 
 function getArticle(word = "") {
   return /^[aeiou]/i.test(word)
@@ -97,7 +98,17 @@ export default function Results() {
     ) ||
     sortedFits[0] ||
     null;
+  
+  const getProgramProfile = (programName) => {
+    const profileName =
+      PROGRAM_NAME_MAP[programName] || programName;
 
+    return PROGRAM_PROFILES[profileName];
+  };
+
+  const topProgramProfile =
+    getProgramProfile(topProgram?.program);
+  
   const remainingFits =
     sortedFits.filter(
       fit =>
@@ -544,9 +555,7 @@ export default function Results() {
                 </h1>
 
                 <p className="top-program-description">
-                  {PROGRAM_PROFILES[
-                    topProgram?.program
-                  ]?.description}
+                  {topProgramProfile?.description}
                 </p>
 
               </div>
@@ -583,33 +592,25 @@ export default function Results() {
 
                   <p>
                     <strong>Description:</strong>{" "}
-                    {PROGRAM_PROFILES[
-                      topProgram?.program
-                    ]?.description ||
+                    {topProgramProfile?.description ||
                       "Program information unavailable."}
                   </p>
 
                   <p>
                     <strong>Environment:</strong>{" "}
-                    {PROGRAM_PROFILES[
-                      topProgram?.program
-                    ]?.environment ||
+                    {topProgramProfile?.environment ||
                       "Environment information unavailable."}
                   </p>
 
                   <p>
                     <strong>Work Style:</strong>{" "}
-                    {PROGRAM_PROFILES[
-                      topProgram?.program
-                    ]?.workStyle ||
+                    {topProgramProfile?.workStyle ||
                       "Work style information unavailable."}
                   </p>
 
                   <p>
                     <strong>Demands:</strong>{" "}
-                    {PROGRAM_PROFILES[
-                      topProgram?.program
-                    ]?.demands ||
+                    {topProgramProfile?.demands ||
                       "Program demands unavailable."}
                   </p>
 
@@ -641,9 +642,7 @@ export default function Results() {
               </div>
 
               {/* FIT BREAKDOWN */}
-              {PROGRAM_PROFILES[
-                topProgram?.program
-              ]?.fitDimensions && (
+              {topProgramProfile?.fitDimensions && (
 
                 <div className="fit-dimensions-card">
 
@@ -652,9 +651,7 @@ export default function Results() {
                   </h3>
 
                   {Object.entries(
-                    PROGRAM_PROFILES[
-                      topProgram?.program
-                    ]?.fitDimensions || {}
+                    topProgramProfile?.fitDimensions || {}
                   ).map(([key, value]) => (
 
                     <div
@@ -716,9 +713,7 @@ export default function Results() {
                   <div className="career-path-tags">
 
                     {(
-                      PROGRAM_PROFILES[
-                        topProgram?.program
-                      ]?.careerPaths || []
+                      (topProgramProfile?.careerPaths || [])
                     ).map((career) => (
 
                       <span
@@ -751,9 +746,7 @@ export default function Results() {
 
                       <p>
                         {
-                          PROGRAM_PROFILES[
-                            topProgram?.program
-                          ]?.realityCheck?.workload
+                          topProgramProfile?.realityCheck?.workload
                         }
                       </p>
 
@@ -767,9 +760,7 @@ export default function Results() {
 
                       <p>
                         {
-                          PROGRAM_PROFILES[
-                            topProgram?.program
-                          ]?.realityCheck?.environment
+                          topProgramProfile?.realityCheck?.environment
                         }
                       </p>
 
@@ -783,9 +774,7 @@ export default function Results() {
 
                       <p>
                         {
-                          PROGRAM_PROFILES[
-                            topProgram?.program
-                          ]?.realityCheck?.pressureLevel
+                          topProgramProfile?.realityCheck?.pressureLevel
                         }
                       </p>
 
@@ -799,9 +788,7 @@ export default function Results() {
 
                       <p>
                         {
-                          PROGRAM_PROFILES[
-                            topProgram?.program
-                          ]?.realityCheck?.keyChallenge
+                          topProgramProfile?.realityCheck?.keyChallenge
                         }
                       </p>
 
@@ -821,9 +808,7 @@ export default function Results() {
                   <div className="skills-list">
 
                     {(
-                      PROGRAM_PROFILES[
-                        topProgram?.program
-                      ]?.skillsToStrengthen || []
+                      (topProgramProfile?.skillsToStrengthen || [])
                     ).map((skill) => (
 
                       <div
@@ -938,6 +923,8 @@ export default function Results() {
 
                             {strongMatches.map(
                               (fit, index) => {
+                                const fitProfile =
+                                  getProgramProfile(fit.program);
                                 const levelClass =
                                   getLevelClass(
                                     fit.level
@@ -1030,9 +1017,7 @@ export default function Results() {
                                     </h3>
 
                                     <p className="strong-match-description">
-                                      {PROGRAM_PROFILES[
-                                        fit?.program
-                                      ]?.description}
+                                      {fitProfile?.description}
                                     </p>
 
                                     <div className="details-toggle">
@@ -1075,30 +1060,22 @@ export default function Results() {
 
                                           <p>
                                             <strong>Description:</strong>{" "}
-                                            {PROGRAM_PROFILES[
-                                              fit?.program
-                                            ]?.description}
+                                            {fitProfile?.description}
                                           </p>
 
                                           <p>
                                             <strong>Environment:</strong>{" "}
-                                            {PROGRAM_PROFILES[
-                                              fit?.program
-                                            ]?.environment}
+                                            {fitProfile?.environment}
                                           </p>
 
                                           <p>
                                             <strong>Work Style:</strong>{" "}
-                                            {PROGRAM_PROFILES[
-                                              fit?.program
-                                            ]?.workStyle}
+                                            {fitProfile?.workStyle}
                                           </p>
 
                                           <p>
                                             <strong>Demands:</strong>{" "}
-                                            {PROGRAM_PROFILES[
-                                              fit?.program
-                                            ]?.demands}
+                                            {fitProfile?.demands}
                                           </p>
 
                                         </div>
@@ -1133,9 +1110,7 @@ export default function Results() {
 
                                           <div className="career-tags">
 
-                                            {(PROGRAM_PROFILES[
-                                              fit?.program
-                                            ]?.careerPaths || []).map(
+                                            {(fitProfile?.careerPaths || []).map(
                                               (career, i) => (
                                                 <span
                                                   key={i}
@@ -1159,9 +1134,7 @@ export default function Results() {
 
                                           <p>
                                             {
-                                              PROGRAM_PROFILES[
-                                                fit?.program
-                                              ]?.realityCheck?.keyChallenge
+                                              fitProfile?.realityCheck?.keyChallenge
                                             }
                                           </p>
 
@@ -1176,9 +1149,7 @@ export default function Results() {
 
                                           <div className="career-tags">
 
-                                            {(PROGRAM_PROFILES[
-                                              fit?.program
-                                            ]?.skillsToStrengthen || []).map(
+                                            {(fitProfile?.skillsToStrengthen || []).map(
                                               (skill, i) => (
                                                 <span
                                                   key={i}
@@ -1194,9 +1165,7 @@ export default function Results() {
                                         </div>
 
                                         {/* FIT BREAKDOWN */}
-                                        {PROGRAM_PROFILES[
-                                          fit?.program
-                                        ]?.fitDimensions && (
+                                        {fitProfile?.fitDimensions && (
 
                                           <div className="detail-box fit-dimensions-card">
 
@@ -1205,9 +1174,7 @@ export default function Results() {
                                             </h4>
 
                                             {Object.entries(
-                                              PROGRAM_PROFILES[
-                                                fit?.program
-                                              ]?.fitDimensions || {}
+                                              fitProfile?.fitDimensions || {}
                                             ).map(([key, value]) => (
 
                                               <div
@@ -1321,6 +1288,9 @@ export default function Results() {
 
                         {otherFits.map((fit, index) => {
 
+                          const fitProfile =
+                            getProgramProfile(fit.program);
+                            
                           const levelClass =
                             getLevelClass(
                               fit.level
@@ -1402,9 +1372,7 @@ export default function Results() {
                                 </h3>
 
                                 <p className="other-match-row-description">
-                                  {PROGRAM_PROFILES[
-                                    fit?.program
-                                  ]?.description}
+                                  {fitProfile?.description}
                                 </p>
 
                                 <div className="details-toggle">
@@ -1444,30 +1412,22 @@ export default function Results() {
 
                                     <p>
                                       <strong>Description:</strong>{" "}
-                                      {PROGRAM_PROFILES[
-                                        fit?.program
-                                      ]?.description}
+                                      {fitProfile?.description}
                                     </p>
 
                                     <p>
                                       <strong>Environment:</strong>{" "}
-                                      {PROGRAM_PROFILES[
-                                        fit?.program
-                                      ]?.environment}
+                                      {fitProfile?.environment}
                                     </p>
 
                                     <p>
                                       <strong>Work Style:</strong>{" "}
-                                      {PROGRAM_PROFILES[
-                                        fit?.program
-                                      ]?.workStyle}
+                                      {fitProfile?.workStyle}
                                     </p>
 
                                     <p>
                                       <strong>Demands:</strong>{" "}
-                                      {PROGRAM_PROFILES[
-                                        fit?.program
-                                      ]?.demands}
+                                      {fitProfile?.demands}
                                     </p>
 
                                   </div>
@@ -1502,9 +1462,7 @@ export default function Results() {
 
                                     <div className="career-tags">
 
-                                      {(PROGRAM_PROFILES[
-                                        fit?.program
-                                      ]?.careerPaths || []).map(
+                                      {(fitProfile?.careerPaths || []).map(
                                         (career, i) => (
                                           <span
                                             key={i}
@@ -1528,9 +1486,7 @@ export default function Results() {
 
                                     <p>
                                       {
-                                        PROGRAM_PROFILES[
-                                          fit?.program
-                                        ]?.realityCheck?.keyChallenge
+                                        fitProfile?.realityCheck?.keyChallenge
                                       }
                                     </p>
 
@@ -1545,9 +1501,7 @@ export default function Results() {
 
                                     <div className="career-tags">
 
-                                      {(PROGRAM_PROFILES[
-                                        fit?.program
-                                      ]?.skillsToStrengthen || []).map(
+                                      {(fitProfile?.skillsToStrengthen || []).map(
                                         (skill, i) => (
                                           <span
                                             key={i}
@@ -1563,9 +1517,7 @@ export default function Results() {
                                   </div>
 
                                   {/* FIT BREAKDOWN */}
-                                  {PROGRAM_PROFILES[
-                                    fit?.program
-                                  ]?.fitDimensions && (
+                                  {fitProfile?.fitDimensions && (
 
                                     <div className="detail-box fit-dimensions-card">
 
@@ -1574,9 +1526,7 @@ export default function Results() {
                                       </h4>
 
                                       {Object.entries(
-                                        PROGRAM_PROFILES[
-                                          fit?.program
-                                        ]?.fitDimensions || {}
+                                        fitProfile?.fitDimensions || {}
                                       ).map(([key, value]) => (
 
                                         <div

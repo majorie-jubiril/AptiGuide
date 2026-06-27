@@ -4,11 +4,15 @@ export const PROGRAM_NAME_MAP = {
   // BUSINESS
   "Bachelor of Business Administration": "BSc Business Administration",
   "Bachelor of Science in Accounting": "BSc Accounting",
+  "Bachelor of Science in Accounting and Finance": "BSc Accounting",
   "Bachelor of Science in Banking and Finance": "BSc Banking and Finance",
   "Bachelor of Science in Human Resource Management": "BSc Human Resource Management",
   "Bachelor of Science in Procurement and Supply Chain Management":
-    "BSc Procurement and Supply Chain Management",
+  "BSc Procurement and Supply Chain Management",
   "Bachelor of Science in Marketing": "BSc Marketing",
+
+  "Bachelor of Arts in Communication Studies": "BA Communication Studies",
+  "Bachelor of Arts in Public Relations Management": "BA Public Relations",
 
   // TECHNOLOGY
   "Bachelor of Science in Information Technology": "BSc Information Technology",
@@ -18,20 +22,12 @@ export const PROGRAM_NAME_MAP = {
 
   // DIPLOMAS
   "Diploma in Accounting": "BSc Accounting",
-  "Diploma in Business Administration": "BSc Business Administration",
   "Diploma in Marketing": "BSc Marketing",
-  "Diploma in Procurement and Supply Chain Management":
-    "BSc Procurement and Supply Chain Management",
-  "Diploma in Information Technology": "BSc Information Technology",
+  "Diploma in Information Technology Management": "BSc Information Technology",
 
   // No behavioural profile yet
-  "Diploma in Public Relations": null,
-  "Diploma in Data Analytics": null,
-  "Diploma in Cyber Security": null,
-  "Diploma in Management": null,
-  "Diploma in Office Management": null,
-  "Diploma in Insurance": null,
-  "Diploma in Accounting and Finance": "BSc Accounting"
+  "Diploma in Public Relations": "BA Public Relations",
+  "Diploma in Management": "BSc Business Administration",
 };
 
 export function mapPrograms(apiPrograms) {

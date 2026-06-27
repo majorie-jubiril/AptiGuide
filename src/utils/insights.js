@@ -1,4 +1,5 @@
 import { PROGRAM_PROFILES } from "../data/programProfiles";
+import { PROGRAM_NAME_MAP } from "../data/programMappings";
 
 function getLevel(score = 50) {
   if (score >= 70) return "high";
@@ -145,7 +146,10 @@ export function generateProgramExplanation(
     return "Program aligned with your personality profile.";
   }
 
-  const profile = PROGRAM_PROFILES[fit.program];
+  const profile =
+    PROGRAM_PROFILES[
+      PROGRAM_NAME_MAP[fit.program] || fit.program
+    ];
 
   if (!profile?.fitExplanations) {
     return "Program aligned with your personality profile.";

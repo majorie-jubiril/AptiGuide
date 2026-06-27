@@ -3263,5 +3263,118 @@ export const PROGRAM_PROFILES = {
     "Problem Solving",
     "Data Interpretation"
     ],
+    }, 
+    
+   "Bachelor of Science in Business Economics": {
+    category: "Business & Finance",
+
+    description:
+        "Focuses on financial analysis, auditing, reporting, and structured financial decision-making.",
+
+    environment:
+        "Structured environments with clear systems, regulations, and analytical workflows.",
+
+    workStyle:
+        "Requires precision, consistency, logical reasoning, and attention to detail.",
+
+    demands:
+        "Strong analytical thinking, accuracy, discipline, and comfort working with structured information.",
+
+    idealTraits: [
+        "analytical",
+        "structured",
+        "detail-oriented",
+        "logical"
+    ],
+
+    fitExplanations: {
+        High:
+        "Your personality aligns strongly with the structured and analytical nature of Accounting. You are likely to feel comfortable working with systems, logic, precision, and organized problem-solving.",
+
+        Moderate:
+        "Some aspects of Accounting align with your strengths, particularly where structure and reasoning are required. However, certain areas of the field may feel restrictive depending on your preferred work style.",
+
+        Low:
+        "Accounting may feel limiting if you naturally prefer flexibility, creativity, or highly people-oriented environments over structured analytical work."
+    },
+
+    applicationNarratives: {
+        High: {
+            title:
+                "Why this may suit your learning style",
+
+            message:
+                "Your preference for structure, logical reasoning, and organized problem-solving aligns strongly with the demands of Accounting. The field rewards analytical precision, consistency, discipline, and comfort working within clearly defined systems."
+        },
+
+        Moderate: {
+            title:
+                "Why this may suit your learning style",
+
+            message:
+                "Certain aspects of Accounting may align naturally with your strengths, particularly where analytical reasoning and structured thinking are involved. However, highly repetitive or process-driven work may occasionally feel restrictive depending on your preferred working style."
+        },
+
+        Low: {
+            title:
+                "Why this may suit your learning style",
+
+            message:
+                "Accounting may feel highly structured or limiting if you naturally prefer flexibility, creativity, or emotionally expressive environments. Adapting to precision-focused systems and repetitive analytical workflows may require deliberate adjustment."
+        }
+    },
+
+    fitDimensions: {
+        analytical: 94,
+        social: 48,
+        structure: 96,
+        creativity: 42,
+        emotionalDemand: 34,
+        adaptability: 52
+    },
+
+    environmentTraits: {
+        structureLevel: "high",
+        collaborationLevel: "moderate",
+        ambiguityLevel: "low",
+        technicalIntensity: "high",
+        creativityDemand: "moderate",
+        emotionalDemand: "low",
+        leadershipDemand: "low",
+        communicationIntensity: "moderate"
+    },
+
+    semanticTypes: [
+        "analytical_program",
+        "structured_program",
+        "business_program",
+        "systems_oriented_program"
+        ],
+
+        learningEnvironment: {
+        pace: "Structured",
+        collaborationLevel: "Moderate",
+        structureLevel: "Very High"
+        },
+
+    careerPaths: [
+    "Financial Analyst",
+    "Auditor",
+    "Tax Consultant",
+    "Corporate Accountant"
+    ],
+
+    realityCheck: {
+    workload: "Moderate to high",
+    environment: "Detail-oriented and process-driven",
+    pressureLevel: "High during reporting periods",
+    keyChallenge: "Maintaining precision under deadlines"
+    },
+
+    skillsToStrengthen: [
+    "Attention to detail",
+    "Financial communication",
+    "Data interpretation"
+    ],
     },  
 };
