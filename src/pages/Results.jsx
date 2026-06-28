@@ -103,7 +103,15 @@ export default function Results() {
     const profileName =
       PROGRAM_NAME_MAP[programName] || programName;
 
-    return PROGRAM_PROFILES[profileName];
+    const profile = PROGRAM_PROFILES[profileName];
+
+    console.log({
+      profileName,
+      profile,
+      hasKey: Object.hasOwn(PROGRAM_PROFILES, profileName),
+    });
+
+    return profile;
   };
 
   const topProgramProfile =

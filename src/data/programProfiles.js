@@ -718,6 +718,468 @@ export const PROGRAM_PROFILES = {
     ],
     },
 
+    "BSc Business Economics": {
+        category: "Business Strategy & Economics",
+
+        description:
+            "Combines business management with economic analysis to understand markets, organizational decision-making, resource allocation, and business performance.",
+
+        environment:
+            "Analytical business environments involving market evaluation, strategic planning, economic reasoning, and organizational decision-making.",
+
+        workStyle:
+            "Requires critical thinking, structured analysis, business awareness, and balancing economic theory with practical decision-making.",
+
+        demands:
+            "Strong analytical reasoning, strategic thinking, quantitative interpretation, and the ability to evaluate business decisions using economic principles.",
+
+        idealTraits: [
+            "analytical",
+            "strategic",
+            "business-minded",
+            "logical"
+        ],
+
+        fitExplanations: {
+            High:
+            "Your personality aligns strongly with the analytical and strategic nature of Business Economics. You are likely to enjoy understanding how businesses make decisions, how markets behave, and how economic principles influence organizational success.",
+
+            Moderate:
+            "Several aspects of Business Economics may suit your strengths, particularly where structured analysis and business decision-making are involved. However, balancing abstract economic concepts with practical business applications may occasionally require adjustment.",
+
+            Low:
+            "Business Economics may feel highly analytical or theory-driven if you naturally prefer highly creative, emotionally expressive, or less structured environments."
+        },
+
+        applicationNarratives: {
+            High: {
+                title:
+                    "Why this may suit your learning style",
+
+                message:
+                    "Your personality appears well aligned with the strategic and analytical nature of Business Economics. The programme rewards logical reasoning, business awareness, structured decision-making, and the ability to interpret economic information to solve real business problems."
+            },
+
+            Moderate: {
+                title:
+                    "Why this may suit your learning style",
+
+                message:
+                    "Many aspects of Business Economics may align naturally with your strengths, particularly where analytical thinking and business strategy intersect. However, abstract economic modelling and quantitative reasoning may occasionally require additional effort."
+            },
+
+            Low: {
+                title:
+                    "Why this may suit your learning style",
+
+                message:
+                    "Business Economics may feel highly analytical or conceptually demanding if you naturally prefer practical execution, highly creative work, or people-centered environments. Developing confidence with structured analysis and economic reasoning will be important."
+            }
+        },
+
+        fitDimensions: {
+            analytical: 92,
+            social: 64,
+            structure: 88,
+            creativity: 56,
+            emotionalDemand: 38,
+            adaptability: 70
+        },
+
+        environmentTraits: {
+            structureLevel: "high",
+            collaborationLevel: "moderate",
+            ambiguityLevel: "moderate",
+            technicalIntensity: "moderate",
+            creativityDemand: "low",
+            emotionalDemand: "low",
+            leadershipDemand: "moderate",
+            communicationIntensity: "moderate"
+        },
+
+        semanticTypes: [
+            "business_program",
+            "analytical_program",
+            "strategy_oriented_program",
+            "systems_oriented_program"
+        ],
+
+        learningEnvironment: {
+            pace: "Structured",
+            collaborationLevel: "Moderate",
+            structureLevel: "High"
+        },
+
+        careerPaths: [
+            "Business Analyst",
+            "Economic Analyst",
+            "Strategy Associate",
+            "Policy Analyst",
+            "Management Consultant"
+        ],
+
+        realityCheck: {
+            workload:
+                "Moderate to heavy analytical workload involving economic analysis, business case studies, research, and quantitative interpretation.",
+
+            environment:
+                "Business and policy-oriented environments requiring analytical thinking, structured reasoning, and strategic evaluation.",
+
+            pressureLevel:
+                "Moderate due to analytical expectations, decision-making responsibilities, and research demands.",
+
+            keyChallenge:
+                "Applying economic theory to practical business decisions while balancing analytical depth with real-world business needs."
+        },
+
+        skillsToStrengthen: [
+            "Economic Analysis",
+            "Business Strategy",
+            "Critical Thinking",
+            "Data Interpretation",
+            "Decision Making"
+        ],
+    },
+
+    "BSc Agribusiness and Finance": {
+        category: "Agribusiness & Finance",
+
+        description:
+            "Combines business management, finance, and agricultural enterprise to prepare students for strategic decision-making across the agricultural value chain.",
+
+        environment:
+            "Business-oriented environments focused on agricultural enterprises, investment, value chain management, sustainability, and financial planning.",
+
+        workStyle:
+            "Requires analytical thinking, business planning, strategic decision-making, and balancing commercial opportunities with industry realities.",
+
+        demands:
+            "Strong business reasoning, financial awareness, strategic planning, problem solving, and adaptability to changing markets.",
+
+        idealTraits: [
+            "analytical",
+            "strategic",
+            "entrepreneurial",
+            "adaptable"
+        ],
+
+        fitExplanations: {
+            High:
+                "Your personality aligns well with the strategic and analytical nature of Agribusiness and Finance. You are likely to enjoy solving business challenges while creating sustainable commercial opportunities.",
+
+            Moderate:
+                "Many aspects of Agribusiness and Finance suit your strengths, although balancing business strategy with industry-specific knowledge may require additional effort.",
+
+            Low:
+                "Agribusiness and Finance may feel demanding if you naturally prefer highly creative, unstructured, or purely people-centered environments."
+        },
+
+        applicationNarratives: {
+            High: {
+                title:
+                    "Why this may suit your learning style",
+
+                message:
+                    "Your behavioural strengths align with the programme's emphasis on business strategy, financial planning, analytical thinking, and entrepreneurial decision-making."
+            },
+
+            Moderate: {
+                title:
+                    "Why this may suit your learning style",
+
+                message:
+                    "You may enjoy the business and finance aspects of the programme, although developing confidence in strategic analysis and commercial planning will strengthen your performance."
+            },
+
+            Low: {
+                title:
+                    "Why this may suit your learning style",
+
+                message:
+                    "The programme's emphasis on structured business analysis and financial reasoning may require significant adjustment if you naturally prefer less analytical environments."
+            }
+        },
+
+        fitDimensions: {
+            analytical: 88,
+            social: 62,
+            structure: 82,
+            creativity: 60,
+            emotionalDemand: 40,
+            adaptability: 74
+        },
+
+        environmentTraits: {
+            structureLevel: "high",
+            collaborationLevel: "moderate",
+            ambiguityLevel: "moderate",
+            technicalIntensity: "moderate",
+            creativityDemand: "moderate",
+            emotionalDemand: "low",
+            leadershipDemand: "moderate",
+            communicationIntensity: "moderate"
+        },
+
+        semanticTypes: [
+            "business_program",
+            "finance_program",
+            "entrepreneurship_program",
+            "strategy_oriented_program"
+        ],
+
+        learningEnvironment: {
+            pace: "Structured",
+            collaborationLevel: "Moderate",
+            structureLevel: "High"
+        },
+
+        careerPaths: [
+            "Agribusiness Manager",
+            "Agricultural Finance Officer",
+            "Business Development Officer",
+            "Supply Chain Manager",
+            "Investment Analyst"
+        ],
+
+        realityCheck: {
+            workload:
+                "Moderate to heavy workload involving business planning, financial analysis, market evaluation, and industry research.",
+
+            environment:
+                "Commercial environments requiring strategic thinking, financial awareness, and entrepreneurial problem solving.",
+
+            pressureLevel:
+                "Moderate due to decision-making responsibilities and business performance expectations.",
+
+            keyChallenge:
+                "Balancing financial performance, strategic planning, and the realities of agricultural industries."
+        },
+
+        skillsToStrengthen: [
+            "Strategic Thinking",
+            "Business Planning",
+            "Financial Analysis",
+            "Decision Making",
+            "Market Analysis"
+        ],
+    },
+
+    "BSc Applied Statistics": {
+        category: "Statistics & Data Analysis",
+
+        description:
+            "Applies statistical theory, probability, and quantitative analysis to solve practical problems across business, healthcare, finance, government, and scientific research.",
+
+        environment:
+            "Highly analytical environments involving statistical modelling, survey design, forecasting, experimental analysis, and evidence-based decision making.",
+
+        workStyle:
+            "Requires precision, logical reasoning, mathematical thinking, attention to detail, and structured analytical problem-solving.",
+
+        demands:
+            "Strong quantitative reasoning, statistical modelling, data interpretation, critical thinking, and communicating analytical findings clearly.",
+
+        idealTraits: [
+            "analytical",
+            "logical",
+            "detail-oriented",
+            "methodical",
+            "patient"
+        ],
+
+        personalityFit: {
+            strengths: [
+                "Quantitative reasoning",
+                "Pattern recognition",
+                "Analytical problem solving",
+                "Evidence-based decision making"
+            ],
+
+            watchOutFor: [
+                "Complex mathematical concepts",
+                "Interpreting large datasets",
+                "Explaining technical results to non-technical audiences"
+            ]
+        },
+
+        semanticTypes: [
+            "statistics_program",
+            "research_heavy_program",
+            "quantitative_program",
+            "analytics_program"
+        ],
+
+        learningEnvironment: {
+            pace: "Moderate",
+            collaborationLevel: "Moderate",
+            structureLevel: "High"
+        },
+
+        careerPaths: [
+            "Statistician",
+            "Data Analyst",
+            "Research Analyst",
+            "Biostatistician",
+            "Risk Analyst"
+        ],
+
+        realityCheck: {
+            workload:
+                "High quantitative workload involving statistical modelling, data analysis, mathematical reasoning, and interpreting research findings.",
+
+            environment:
+                "Analytical environments where evidence, numerical accuracy, and statistical validity drive decision making.",
+
+            pressureLevel:
+                "Moderate due to analytical accuracy requirements, project deadlines, and the importance of reliable statistical conclusions.",
+
+            keyChallenge:
+                "Applying complex statistical methods correctly while communicating meaningful insights to decision makers."
+        },
+
+        skillsToStrengthen: [
+            "Statistical Modelling",
+            "Probability",
+            "Data Analysis",
+            "Research Methods",
+            "Technical Communication"
+        ],
+    },
+
+    "BSc Actuarial Science": {
+        category: "Mathematics & Risk Analysis",
+
+        description:
+            "Applies mathematics, probability, statistics, financial modelling, and risk analysis to evaluate uncertainty and support long-term financial decision-making.",
+
+        environment:
+            "Highly analytical environments involving financial modelling, insurance, pensions, investments, statistical forecasting, and quantitative risk assessment.",
+
+        workStyle:
+            "Requires precision, logical reasoning, mathematical thinking, disciplined analysis, attention to detail, and evidence-based decision-making.",
+
+        demands:
+            "Strong quantitative reasoning, advanced mathematical ability, statistical modelling, financial analysis, and solving complex analytical problems.",
+
+        idealTraits: [
+            "analytical",
+            "logical",
+            "detail-oriented",
+            "disciplined",
+            "strategic"
+        ],
+
+        semanticTypes: [
+            "mathematics_program",
+            "risk_analysis_program",
+            "finance_program",
+            "analytical_program"
+        ],
+
+        learningEnvironment: {
+            pace: "Moderate",
+            collaborationLevel: "Moderate",
+            structureLevel: "Very High"
+        },
+
+        careerPaths: [
+            "Actuary",
+            "Risk Analyst",
+            "Insurance Analyst",
+            "Investment Risk Consultant",
+            "Pension Analyst"
+        ],
+
+        realityCheck: {
+            workload:
+                "Highly demanding quantitative workload involving mathematical modelling, statistical analysis, financial forecasting, and continuous problem-solving.",
+
+            environment:
+                "Structured professional environments where precision, accuracy, and evidence-based decision-making are critical.",
+
+            pressureLevel:
+                "High due to financial responsibility, regulatory requirements, and the need for highly accurate risk predictions.",
+
+            keyChallenge:
+                "Applying advanced mathematical models to complex financial risks while maintaining exceptional accuracy."
+        },
+
+        skillsToStrengthen: [
+            "Advanced Mathematics",
+            "Statistical Modelling",
+            "Financial Analysis",
+            "Risk Assessment",
+            "Problem Solving"
+        ]
+    },
+
+    "BSc Logistics and Transport Management": {
+        category: "Logistics & Supply Chain",
+
+        description:
+            "Focuses on logistics, transportation systems, supply chain management, procurement, inventory control, and operational efficiency across local and global markets.",
+
+        environment:
+            "Fast-paced operational environments involving planning, coordination, logistics networks, warehousing, procurement, transportation, and supply chain optimization.",
+
+        workStyle:
+            "Requires organization, structured planning, analytical thinking, decision-making under time constraints, and coordination of multiple moving parts.",
+
+        demands:
+            "Strong problem-solving ability, operational planning, quantitative reasoning, attention to detail, and effective coordination of logistics processes.",
+
+        idealTraits: [
+            "organized",
+            "analytical",
+            "strategic",
+            "detail-oriented",
+            "efficient"
+        ],
+
+        semanticTypes: [
+            "operations_program",
+            "business_program",
+            "analytical_program",
+            "planning_program"
+        ],
+
+        learningEnvironment: {
+            pace: "Fast-paced",
+            collaborationLevel: "High",
+            structureLevel: "High"
+        },
+
+        careerPaths: [
+            "Supply Chain Analyst",
+            "Logistics Manager",
+            "Procurement Officer",
+            "Operations Manager",
+            "Transport Planner"
+        ],
+
+        realityCheck: {
+            workload:
+                "Demanding operational workload involving planning, scheduling, coordination, procurement, logistics analysis, and problem-solving.",
+
+            environment:
+                "Dynamic business environments requiring constant coordination across suppliers, transport systems, warehouses, and customers.",
+
+            pressureLevel:
+                "High due to delivery deadlines, operational disruptions, and resource optimization.",
+
+            keyChallenge:
+                "Balancing efficiency, cost, customer satisfaction, and operational reliability under changing conditions."
+        },
+
+        skillsToStrengthen: [
+            "Supply Chain Analysis",
+            "Operational Planning",
+            "Decision Making",
+            "Data Analysis",
+            "Communication"
+        ]
+    },
+
     "BSc Banking and Finance": {
     category: "Finance & Economics",
 
@@ -839,6 +1301,73 @@ export const PROGRAM_PROFILES = {
     "Attention to Detail",
     "Risk Assessment"
     ],
+    },
+
+    "BSc Real Estate Management and Finance": {
+        category: "Real Estate & Finance",
+
+        description:
+            "Focuses on property valuation, real estate investment, finance, asset management, urban development, and property market analysis for informed investment and management decisions.",
+
+        environment:
+            "Business-oriented environments involving property investment, valuation, financial analysis, urban planning, real estate development, and asset management.",
+
+        workStyle:
+            "Requires strategic thinking, financial analysis, negotiation skills, structured planning, attention to detail, and balancing investment opportunities with market realities.",
+
+        demands:
+            "Strong analytical reasoning, financial literacy, quantitative analysis, decision-making, communication, and evaluating long-term property investments.",
+
+        idealTraits: [
+            "analytical",
+            "strategic",
+            "organized",
+            "detail-oriented",
+            "practical"
+        ],
+
+        semanticTypes: [
+            "finance_program",
+            "investment_program",
+            "property_program",
+            "business_program"
+        ],
+
+        learningEnvironment: {
+            pace: "Moderate",
+            collaborationLevel: "Moderate",
+            structureLevel: "High"
+        },
+
+        careerPaths: [
+            "Real Estate Analyst",
+            "Property Manager",
+            "Property Valuer",
+            "Real Estate Investment Consultant",
+            "Asset Manager"
+        ],
+
+        realityCheck: {
+            workload:
+                "Moderately demanding workload involving financial analysis, property valuation, market research, investment planning, and project coordination.",
+
+            environment:
+                "Professional business environments requiring interaction with clients, developers, financial institutions, and property markets.",
+
+            pressureLevel:
+                "Moderate to High due to investment decisions, market fluctuations, client expectations, and financial accountability.",
+
+            keyChallenge:
+                "Balancing financial performance, market uncertainty, property valuation accuracy, and long-term investment strategy."
+        },
+
+        skillsToStrengthen: [
+            "Financial Analysis",
+            "Property Valuation",
+            "Negotiation",
+            "Market Research",
+            "Strategic Decision Making"
+        ]
     },
 
     "BSc Procurement and Supply Chain Management": {
@@ -1504,8 +2033,6 @@ export const PROGRAM_PROFILES = {
         }
     },
 
-
-
     fitExplanations: {
         High:
         "Your personality aligns strongly with the analytical and structured nature of Software Engineering. You are likely to enjoy solving technical problems and building organized systems.",
@@ -1581,127 +2108,86 @@ export const PROGRAM_PROFILES = {
     ],
     },
 
-    "BSc Data Science": {
-    category: "Data & Analytics",
+    "BSc Data Science and Analytics": {
+        category: "Data Science & Analytics",
 
-    description:
-        "Centered on analyzing data, identifying patterns, building predictive models, and generating insights for decision-making.",
+        description:
+            "Combines statistics, programming, machine learning, and business analytics to transform data into strategic insights and evidence-based decision-making.",
 
-    environment:
-        "Analytical environments involving data interpretation, statistics, programming, and research-oriented problem-solving.",
+        environment:
+            "Technology-driven environments involving data modelling, artificial intelligence, business intelligence, predictive analytics, and evidence-based decision making.",
 
-    workStyle:
-        "Requires curiosity, analytical reasoning, logical thinking, and comfort working with large amounts of information.",
+        workStyle:
+            "Requires analytical thinking, logical reasoning, structured problem-solving, attention to detail, and continuous learning of emerging technologies.",
 
-    demands:
-        "Strong critical thinking, persistence, mathematical reasoning, and the ability to interpret complex data accurately.",
+        demands:
+            "Strong quantitative reasoning, programming ability, statistical analysis, data interpretation, and the ability to communicate technical insights clearly.",
 
-    idealTraits: [
-        "analytical",
-        "curious",
-        "logical",
-        "research-oriented"
-    ],
+        idealTraits: [
+            "analytical",
+            "logical",
+            "curious",
+            "detail-oriented",
+            "systematic"
+        ],
 
-    fitExplanations: {
-        High:
-        "Your personality aligns strongly with the analytical and investigative nature of Data Science. You are likely to enjoy identifying patterns, solving complex problems, and working with data-driven systems.",
+        personalityFit: {
+            strengths: [
+                "Analytical reasoning",
+                "Pattern recognition",
+                "Logical problem solving",
+                "Evidence-based decision making"
+            ],
 
-        Moderate:
-        "Some aspects of Data Science may suit your strengths, though the highly analytical and technical demands of the field may occasionally require adjustment.",
-
-        Low:
-        "Data Science may feel overly technical, abstract, or data-heavy if your natural strengths lean more toward highly social, creative, or emotionally expressive environments."
-    },
-
-    applicationNarratives: {
-        High: {
-            title:
-                "Why this may suit your learning style",
-
-            message:
-                "Your personality appears strongly aligned with the analytical and investigative nature of Data Science. This environment rewards curiosity, logical reasoning, pattern recognition, and the ability to work deeply with complex information."
+            watchOutFor: [
+                "Large volumes of complex data",
+                "Rapid technological changes",
+                "Balancing technical analysis with business understanding"
+            ]
         },
 
-        Moderate: {
-            title:
-                "Why this may suit your learning style",
+        semanticTypes: [
+            "technology_program",
+            "analytics_program",
+            "research_heavy_program",
+            "quantitative_program"
+        ],
 
-            message:
-                "Several aspects of Data Science may align with your strengths, particularly where analytical thinking and structured investigation are involved. However, highly abstract or data-intensive work may occasionally require adaptation."
+        learningEnvironment: {
+            pace: "Fast-paced",
+            collaborationLevel: "Moderate",
+            structureLevel: "High"
         },
 
-        Low: {
-            title:
-                "Why this may suit your learning style",
+        careerPaths: [
+            "Data Analyst",
+            "Business Intelligence Analyst",
+            "Data Scientist",
+            "Machine Learning Engineer",
+            "Analytics Consultant"
+        ],
 
-            message:
-                "Data Science may feel highly analytical or technically abstract if you naturally prefer emotionally expressive, creative, or people-centered environments. Building comfort with sustained data interpretation and technical reasoning may require growth over time."
-        }
-    },
+        realityCheck: {
+            workload:
+                "High analytical workload involving programming, statistical modelling, data cleaning, visualization, and solving complex business problems.",
 
-    fitDimensions: {
-        analytical: 99,
-        social: 40,
-        structure: 92,
-        creativity: 66,
-        emotionalDemand: 30,
-        adaptability: 64
-    },
+            environment:
+                "Technology-focused environments where data is collected, analysed, and translated into strategic business or organisational decisions.",
 
-    environmentTraits: {
-        structureLevel: "high",
-        collaborationLevel: "low",
-        ambiguityLevel: "moderate",
-        technicalIntensity: "very_high",
-        creativityDemand: "moderate",
-        emotionalDemand: "low",
-        leadershipDemand: "low",
-        communicationIntensity: "low"
-    },
+            pressureLevel:
+                "Moderate to high due to project deadlines, accuracy expectations, and rapidly evolving technologies.",
 
-    semanticTypes: [
-        "analytical_program",
-        "research_heavy_program",
-        "technical_program",
-        "systems_oriented_program"
-    ],
+            keyChallenge:
+                "Balancing technical expertise with business understanding while communicating complex analytical findings to diverse audiences."
+        },
 
-    learningEnvironment: {
-        pace: "Research-intensive",
-        collaborationLevel: "Low",
-        structureLevel: "High"
-    },
-
-    careerPaths: [
-    "Data Analyst",
-    "Machine Learning Engineer",
-    "Business Intelligence Analyst",
-    "AI Research Assistant",
-    "Data Engineer"
-    ],
-
-    realityCheck: {
-    workload:
-        "Heavy analytical workload involving data cleaning, statistics, visualization, and predictive modeling.",
-
-    environment:
-        "Technical and research-oriented environments requiring deep analytical focus and experimentation.",
-
-    pressureLevel:
-        "Moderate to high due to analytical accuracy expectations and problem-solving complexity.",
-
-    keyChallenge:
-        "Turning large and complex datasets into clear, meaningful, and actionable insights."
-    },
-
-    skillsToStrengthen: [
-    "Statistical Analysis",
-    "Data Visualization",
-    "Programming",
-    "Critical Thinking",
-    "Research Interpretation"
-    ],
+        skillsToStrengthen: [
+            "Programming",
+            "Statistical Analysis",
+            "Machine Learning",
+            "Data Visualization",
+            "Business Communication"
+        ],
     },
 
     "BSc Electrical and Electronic Engineering": {
@@ -2661,6 +3147,88 @@ export const PROGRAM_PROFILES = {
     ],
     },
 
+    "BA Applied French and Communications": {
+        category: "Languages & Communication",
+
+        description:
+            "Develops advanced French language skills alongside communication, intercultural competence, media, diplomacy, and international business communication.",
+
+        environment:
+            "Interactive multicultural environments involving language, communication, public engagement, international collaboration, and cross-cultural exchange.",
+
+        workStyle:
+            "Requires strong communication, adaptability, cultural awareness, creativity, confidence, and the ability to work effectively across languages and cultures.",
+
+        demands:
+            "Excellent written and spoken communication, language proficiency, presentation skills, critical thinking, and intercultural sensitivity.",
+
+        idealTraits: [
+            "communicative",
+            "adaptable",
+            "confident",
+            "creative",
+            "people-oriented"
+        ],
+
+        personalityFit: {
+            strengths: [
+                "Language learning",
+                "Public communication",
+                "Relationship building",
+                "Cross-cultural collaboration"
+            ],
+
+            watchOutFor: [
+                "Maintaining language fluency",
+                "Public speaking pressure",
+                "Communicating across different cultural expectations"
+            ]
+        },
+
+        semanticTypes: [
+            "communication_program",
+            "language_program",
+            "people_centered_program",
+            "international_program"
+        ],
+
+        learningEnvironment: {
+            pace: "Moderate",
+            collaborationLevel: "High",
+            structureLevel: "Moderate"
+        },
+
+        careerPaths: [
+            "Translator",
+            "Interpreter",
+            "Corporate Communications Officer",
+            "Diplomatic Service Officer",
+            "International Relations Officer"
+        ],
+
+        realityCheck: {
+            workload:
+                "Moderate workload involving language practice, presentations, writing, cultural studies, and communication projects.",
+
+            environment:
+                "Collaborative environments where communication, language proficiency, and cultural understanding are essential.",
+
+            pressureLevel:
+                "Moderate due to language accuracy, presentations, and real-time communication expectations.",
+
+            keyChallenge:
+                "Maintaining high language proficiency while effectively communicating across diverse cultural and professional settings."
+        },
+
+        skillsToStrengthen: [
+            "French Language",
+            "Public Speaking",
+            "Intercultural Communication",
+            "Writing",
+            "Presentation Skills"
+        ],
+    },
+
     "BA Public Relations": {
     category: "Public Relations & Media",
 
@@ -3262,119 +3830,6 @@ export const PROGRAM_PROFILES = {
     "Community Engagement",
     "Problem Solving",
     "Data Interpretation"
-    ],
-    }, 
-    
-   "Bachelor of Science in Business Economics": {
-    category: "Business & Finance",
-
-    description:
-        "Focuses on financial analysis, auditing, reporting, and structured financial decision-making.",
-
-    environment:
-        "Structured environments with clear systems, regulations, and analytical workflows.",
-
-    workStyle:
-        "Requires precision, consistency, logical reasoning, and attention to detail.",
-
-    demands:
-        "Strong analytical thinking, accuracy, discipline, and comfort working with structured information.",
-
-    idealTraits: [
-        "analytical",
-        "structured",
-        "detail-oriented",
-        "logical"
-    ],
-
-    fitExplanations: {
-        High:
-        "Your personality aligns strongly with the structured and analytical nature of Accounting. You are likely to feel comfortable working with systems, logic, precision, and organized problem-solving.",
-
-        Moderate:
-        "Some aspects of Accounting align with your strengths, particularly where structure and reasoning are required. However, certain areas of the field may feel restrictive depending on your preferred work style.",
-
-        Low:
-        "Accounting may feel limiting if you naturally prefer flexibility, creativity, or highly people-oriented environments over structured analytical work."
-    },
-
-    applicationNarratives: {
-        High: {
-            title:
-                "Why this may suit your learning style",
-
-            message:
-                "Your preference for structure, logical reasoning, and organized problem-solving aligns strongly with the demands of Accounting. The field rewards analytical precision, consistency, discipline, and comfort working within clearly defined systems."
-        },
-
-        Moderate: {
-            title:
-                "Why this may suit your learning style",
-
-            message:
-                "Certain aspects of Accounting may align naturally with your strengths, particularly where analytical reasoning and structured thinking are involved. However, highly repetitive or process-driven work may occasionally feel restrictive depending on your preferred working style."
-        },
-
-        Low: {
-            title:
-                "Why this may suit your learning style",
-
-            message:
-                "Accounting may feel highly structured or limiting if you naturally prefer flexibility, creativity, or emotionally expressive environments. Adapting to precision-focused systems and repetitive analytical workflows may require deliberate adjustment."
-        }
-    },
-
-    fitDimensions: {
-        analytical: 94,
-        social: 48,
-        structure: 96,
-        creativity: 42,
-        emotionalDemand: 34,
-        adaptability: 52
-    },
-
-    environmentTraits: {
-        structureLevel: "high",
-        collaborationLevel: "moderate",
-        ambiguityLevel: "low",
-        technicalIntensity: "high",
-        creativityDemand: "moderate",
-        emotionalDemand: "low",
-        leadershipDemand: "low",
-        communicationIntensity: "moderate"
-    },
-
-    semanticTypes: [
-        "analytical_program",
-        "structured_program",
-        "business_program",
-        "systems_oriented_program"
-        ],
-
-        learningEnvironment: {
-        pace: "Structured",
-        collaborationLevel: "Moderate",
-        structureLevel: "Very High"
-        },
-
-    careerPaths: [
-    "Financial Analyst",
-    "Auditor",
-    "Tax Consultant",
-    "Corporate Accountant"
-    ],
-
-    realityCheck: {
-    workload: "Moderate to high",
-    environment: "Detail-oriented and process-driven",
-    pressureLevel: "High during reporting periods",
-    keyChallenge: "Maintaining precision under deadlines"
-    },
-
-    skillsToStrengthen: [
-    "Attention to detail",
-    "Financial communication",
-    "Data interpretation"
     ],
     },  
 };
